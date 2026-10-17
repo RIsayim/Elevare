@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout title="Contact — Solace Integrated Living" description="Get in touch with one of Solace's interior designers to begin a thoughtful conversation about your home.">
+  <SiteHeader />
+  <main class="contact-page">
+    <section class="hero about-hero contact-hero" aria-labelledby="contact-hero-title">
+      <div class="hero-copy contact-hero-copy">
+        <h1 id="contact-hero-title" class="contact-hero-title">
+          Get in touch with<br />
+          one of our<br />
+          interior designers
+        </h1>
+      </div>
+    </section>
+
+    <section class="contact-form-section" aria-label="Contact Solace">
+      <form class="contact-form" data-contact-form>
+        <div class="contact-form-field">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" autocomplete="name" placeholder="YOUR NAME" required />
+        </div>
+
+        <div class="contact-form-field">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="EXAMPLE@EXAMPLE.COM" required />
+        </div>
+
+        <div class="contact-form-field contact-form-message">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="4" placeholder="WRITE YOUR MESSAGE HERE…" required></textarea>
+        </div>
+
+        <div class="contact-form-consent">
+          <input id="contact-consent" name="consent" type="checkbox" required />
+          <label for="contact-consent">I agree that Solace may use my details to respond to this enquiry.</label>
+        </div>
+
+        <button class="contact-form-submit" type="submit">Send message <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+  </main>
+
+  <SiteFooter showIntro={false} />
+
+  <script>
+    const contactForm = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      const values = new FormData(contactForm);
+      const subject = encodeURIComponent(`Solace design inquiry — ${String(values.get('name') || '')}`);
+      const body = encodeURIComponent([
+        `Name: ${values.get('name') || ''}`,
+        `Email: ${values.get('email') || ''}`,
+        '',
+        String(values.get('message') || ''),
+      ].join('\n'));
+      window.location.href = `mailto:hello@solace.studio?subject=${subject}&body=${body}`;
+    });
+  </script>
+</Layout>

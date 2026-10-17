@@ -1,0 +1,97 @@
+---
+interface Props {
+  showIntro?: boolean;
+}
+
+const { showIntro = true } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    {showIntro && (
+      <div class="footer-intro">
+        <h2>Relax, get carried<br />away and enjoy<br />design.</h2>
+      </div>
+    )}
+
+    <section class="footer-contact-grid" aria-label="Contact Solace">
+      <div class="footer-contact-item">
+        <p class="footer-contact-label"><span aria-hidden="true"></span>Contact us</p>
+        <a class="footer-contact-value" href="/contact/">Form</a>
+      </div>
+      <div class="footer-contact-item">
+        <p class="footer-contact-label"><span aria-hidden="true"></span>Email us</p>
+        <a class="footer-contact-value" href="mailto:hello@solace.studio">hello@solace.studio</a>
+      </div>
+      <div class="footer-contact-item">
+        <p class="footer-contact-label"><span aria-hidden="true"></span>Start a project</p>
+        <a class="footer-contact-value" href="/consultation/">Schedule a consultation</a>
+      </div>
+    </section>
+
+    <div class="footer-connect">
+      <section class="footer-newsletter" aria-labelledby="footer-newsletter-title">
+        <h2 class="footer-section-heading" id="footer-newsletter-title">Newsletter</h2>
+        <form class="footer-newsletter-form" data-footer-newsletter>
+          <label class="visually-hidden" for="footer-newsletter-email">Your email address</label>
+          <input id="footer-newsletter-email" name="email" type="email" placeholder="Enter your email here" autocomplete="email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="footer-social" aria-labelledby="footer-social-title">
+        <h2 class="footer-section-heading" id="footer-social-title">Follow us</h2>
+        <div class="footer-social-links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.8" cy="6.5" r="1.1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5H17V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.3H7.5v3.2h2.8V21z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.3 7.1a2.6 2.6 0 0 0-1.8-1.8C17.9 4.9 12 4.9 12 4.9s-5.9 0-7.5.4a2.6 2.6 0 0 0-1.8 1.8A27 27 0 0 0 2.3 12a27 27 0 0 0 .4 4.9 2.6 2.6 0 0 0 1.8 1.8c1.6.4 7.5.4 7.5.4s5.9 0 7.5-.4a2.6 2.6 0 0 0 1.8-1.8 27 27 0 0 0 .4-4.9 27 27 0 0 0-.4-4.9" fill="currentColor"/><path d="m10 15.5 5.2-3.5L10 8.5z" fill="#fff"/></svg>
+          </a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noreferrer" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8a9.2 9.2 0 0 0-3.4 17.8c0-.8 0-1.8.2-2.7l1.2-5.1s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.8 0 1.2.6 1.2 1.4 0 .8-.5 2- .8 3.1-.2.9.5 1.7 1.4 1.7 1.7 0 3-1.8 3-4.4 0-2.3-1.6-3.9-4-3.9-2.7 0-4.3 2-4.3 4.1 0 .8.3 1.7.7 2.1.1.2.2.3.1.5l-.3 1c0 .2-.2.3-.4.2-1.2-.5-2-2.1-2-3.5 0-2.9 2.1-5.6 6.1-5.6 3.2 0 5.7 2.3 5.7 5.3 0 3.2-2 5.9-4.8 5.9-.9 0-1.8-.5-2.1-1.1l-.6 2.2c-.2.9-.9 1.9-1.3 2.5.9.3 1.8.5 2.8.5a9.2 9.2 0 0 0 0-18.4" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6M3.7 10h3v10h-3zm5 0h2.9v1.4h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.6V20h-3v-5c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6V20h-3z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="footer-members" aria-labelledby="footer-members-title">
+      <h2 class="footer-section-heading" id="footer-members-title">Members of</h2>
+      <div class="footer-members-logos">
+        <div class="footer-member-logo"><img src="/images/members/savant.svg" alt="Savant" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src="/images/members/josh-ai.webp" alt="Josh.ai" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src="/images/members/crestron.png" alt="Crestron" loading="lazy" /></div>
+        <div class="footer-member-logo footer-member-logo-lutron"><img src="/images/members/lutron.png" alt="Lutron" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src="/images/members/control4-wordmark.png" alt="Control4" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Solace Integrated Living &middot; Los Angeles &middot; Montecito &middot; California</p>
+      <nav aria-label="Footer navigation">
+        <a href="/projects/">Projects</a>
+        <a href="/consultation/">Consultation</a>
+        <a href="/#top">Back to top &uarr;</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const footerNewsletter = document.querySelector<HTMLFormElement>('[data-footer-newsletter]');
+  footerNewsletter?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!footerNewsletter.reportValidity()) return;
+    const email = String(new FormData(footerNewsletter).get('email') ?? '');
+    const subject = encodeURIComponent('Solace newsletter subscription');
+    const body = encodeURIComponent(`Please add ${email} to the Solace newsletter.`);
+    window.location.href = `mailto:hello@solace.studio?subject=${subject}&body=${body}`;
+  });
+</script>

@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const aboutGallery = [
+  { src: '/images/about-gallery-control.webp', className: 'experience-image-one', row: 'first', alt: 'A discreet wall keypad in a warm modern home entry' },
+  { src: '/images/about-gallery-residence.webp', className: 'experience-image-two', row: 'first', alt: 'A California hillside residence with integrated evening lighting' },
+  { src: '/images/about-gallery-living.webp', className: 'experience-image-three', row: 'first', alt: 'A connected great room with motorized shades and layered lighting' },
+  { src: '/images/about-gallery-audio.webp', className: 'experience-image-four', row: 'first', alt: 'A calm listening room with discreet architectural audio' },
+  { src: '/images/about-gallery-cinema.webp', className: 'experience-image-five', row: 'second', alt: 'A private home cinema with integrated acoustics and low step lighting' },
+  { src: '/images/about-gallery-shades.webp', className: 'experience-image-six', row: 'second', alt: 'A restful bedroom with motorized shades and soft natural light' },
+  { src: '/images/about-gallery-landscape-lighting.webp', className: 'experience-image-seven', row: 'second', alt: 'A private terrace with discreet outdoor audio and landscape lighting' },
+  { src: '/images/about-gallery-home-control.webp', className: 'experience-image-eight', row: 'second', alt: 'A home entry with understated lighting and integrated control' },
+  // RS:UPGRADE asset="public/images/experience-gallery-10.jpg"
+  { src: '/images/experience-gallery-10.jpg', className: 'experience-image-nine', row: 'first', alt: '', decorative: true },
+  // RS:UPGRADE asset="public/images/experience-gallery-11.jpg"
+  { src: '/images/experience-gallery-11.jpg', className: 'experience-image-ten', row: 'first', alt: '', decorative: true },
+  // RS:UPGRADE asset="public/images/experience-gallery-09.jpg"
+  { src: '/images/experience-gallery-09.jpg', className: 'experience-image-eleven', row: 'second', alt: '', decorative: true },
+  // RS:UPGRADE asset="public/images/experience-gallery-12.jpg"
+  { src: '/images/experience-gallery-12.jpg', className: 'experience-image-twelve', row: 'second', alt: '', decorative: true },
+];
+---
+
+<Layout title="About Solace — Solace Integrated Living" description="Design beyond the tangible: Solace brings thoughtful home technology together around the way you live.">
+  <SiteHeader />
+
+  <main class="about-page">
+    <section class="hero about-hero" aria-labelledby="about-hero-title">
+      <h1 id="about-hero-title">
+        Design Beyond<br />
+        The Tangible
+      </h1>
+    </section>
+
+    <section class="experience-gallery" aria-label="Homes and technology, thoughtfully integrated" data-parallax-gallery>
+      <div class="experience-mosaic">
+        {aboutGallery.map((image) => (
+          <figure class:list={['experience-image', image.className]} data-scroll-row={image.row} aria-hidden={image.decorative ? 'true' : undefined}>
+            <img src={image.src} alt={image.alt} loading={image.decorative ? 'eager' : 'lazy'} decoding={image.decorative ? 'async' : undefined} />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="about-story" aria-label="How Solace approaches integrated living">
+      <p>At Solace, we bring lighting, sound, climate, security, and entertainment into one thoughtful system. From the earliest plans onward, we collaborate with you and your design team, making every detail feel natural, personal, and in harmony with the home and the way you live each day.</p>
+      <p>Every home begins with the people who live there and the way they want each room to feel. We listen closely, then coordinate with architects, designers, and builders to place technology where it belongs—quietly supporting comfort, connection, and the everyday moments that make a house feel unmistakably yours.</p>
+    </section>
+
+    <section class="about-leadership" data-about-leadership aria-labelledby="about-leadership-title">
+      <figure class="about-leadership-image" aria-hidden="true">
+        <img src="/images/about-leadership-founder.png" alt="" width="1664" height="1024" loading="lazy" decoding="async" data-leadership-image />
+      </figure>
+      <div class="about-leadership-inner">
+        <div class="about-leadership-copy">
+          <h2 id="about-leadership-title" class="visually-hidden">A note from our founder</h2>
+          <p>We believe a home should respond quietly to the people who live in it. Thoughtful lighting, sound, comfort, and control can bring a sense of ease to the everyday.</p>
+          <p>That is the idea behind Solace. We work closely with each client and their design team to bring technology into the architecture with care—creating homes that feel intuitive, personal, and ready for the moments that matter.</p>
+          <p class="about-leadership-name">Solace Leadership</p>
+          <p class="about-leadership-role">Founder &amp; CEO</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values" aria-labelledby="about-values-title">
+      <div class="about-values-inner">
+        <div class="about-values-intro">
+          <h2 id="about-values-title">Our values, embedded in the “PEACE” concept, are our guidelines for making a difference.</h2>
+        </div>
+        <div class="about-values-list" aria-label="The values that guide our work">
+          <article class="about-value">
+            <h3><span>01 /</span>Passion</h3>
+            <p class="about-value-lede">We bring care and curiosity to every home we help shape.</p>
+            <p class="about-value-detail">A genuine enthusiasm for thoughtful technology guides every conversation, plan, and installation, so each system feels personal from the start.</p>
+          </article>
+          <article class="about-value">
+            <h3><span>02 /</span>Excellence</h3>
+            <p class="about-value-lede">We hold every detail to a thoughtful, exacting standard.</p>
+            <p class="about-value-detail">From system design and coordination to installation and support, we work carefully to make every part feel effortless and dependable.</p>
+          </article>
+          <article class="about-value">
+            <h3><span>03 /</span>Authenticity</h3>
+            <p class="about-value-lede">We listen first, then design around the way you truly live.</p>
+            <p class="about-value-detail">Our recommendations are considered, honest, and rooted in your home’s architecture, your routines, and what matters most to you.</p>
+          </article>
+          <article class="about-value">
+            <h3><span>04 /</span>Commitment</h3>
+            <p class="about-value-lede">We stay alongside you from the first conversation onward.</p>
+            <p class="about-value-detail">Close collaboration with you and your project team keeps each decision clear and every system aligned with the home taking shape.</p>
+          </article>
+          <article class="about-value">
+            <h3><span>05 /</span>Elegance</h3>
+            <p class="about-value-lede">Technology belongs naturally within a beautifully considered home.</p>
+            <p class="about-value-detail">We take care with every visible detail, bringing systems together so they support the design without competing with it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-manifesto" data-about-manifesto aria-labelledby="about-manifesto-title">
+      <div class="about-manifesto-stage" data-manifesto-stage>
+        <figure class="about-manifesto-image">
+          <img src="/images/about-manifesto-background.webp" alt="A coastal residence with a calm sea view, layered lighting, and discreet home controls" loading="lazy" decoding="async" />
+          <span class="about-manifesto-shade" data-manifesto-shade aria-hidden="true"></span>
+        </figure>
+        <div class="about-manifesto-copy">
+          <h2 id="about-manifesto-title">Manifesto</h2>
+          <div class="about-manifesto-body">
+            <p>A home should feel effortless. Lighting, sound, comfort, and control work together quietly, shaping an atmosphere that responds to the moment and makes everyday living feel natural.</p>
+            <p>From the first plans to the final detail, we bring design and technology into step. Every system is considered around the architecture and the people who call it home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <SiteFooter showIntro={false} />
+
+  <script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const parallaxGallery = document.querySelector<HTMLElement>('[data-parallax-gallery]');
+    const firstGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="first"]') ?? []);
+    const secondGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="second"]') ?? []);
+    if (parallaxGallery && firstGalleryRow.length && secondGalleryRow.length && !reduceMotion && window.matchMedia('(min-width: 801px)').matches) {
+      let parallaxFrame = 0;
+      const updateParallaxGallery = () => {
+        parallaxFrame = 0;
+        const bounds = parallaxGallery.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+        const rowTravelRange = Math.min(300, Math.max(180, window.innerWidth * 0.16));
+        const rowTravel = (0.5 - progress) * rowTravelRange;
+        firstGalleryRow.forEach((image) => image.style.setProperty('--gallery-x', `${rowTravel.toFixed(1)}px`));
+        secondGalleryRow.forEach((image) => image.style.setProperty('--gallery-x', `${(-rowTravel).toFixed(1)}px`));
+      };
+      const requestParallaxUpdate = () => {
+        if (!parallaxFrame) parallaxFrame = window.requestAnimationFrame(updateParallaxGallery);
+      };
+      window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+      window.addEventListener('resize', requestParallaxUpdate, { passive: true });
+      updateParallaxGallery();
+    }
+
+    const aboutManifesto = document.querySelector<HTMLElement>('[data-about-manifesto]');
+    const manifestoStage = aboutManifesto?.querySelector<HTMLElement>('[data-manifesto-stage]');
+    if (aboutManifesto && manifestoStage) {
+      const manifestoShade = aboutManifesto.querySelector<HTMLElement>('[data-manifesto-shade]');
+      const siteHeader = document.querySelector<HTMLElement>('.site-header');
+      let manifestoFrame = 0;
+      const updateManifesto = () => {
+        manifestoFrame = 0;
+        const bounds = aboutManifesto.getBoundingClientRect();
+        const travel = Math.max(1, aboutManifesto.offsetHeight - manifestoStage.offsetHeight);
+        const progress = Math.min(1, Math.max(0, -bounds.top / travel));
+        const revealProgress = reduceMotion ? 1 : Math.min(1, progress / 0.52);
+        const shadeOpacity = 0.74 * (1 - revealProgress);
+        manifestoShade?.style.setProperty('--manifesto-shade-opacity', shadeOpacity.toFixed(3));
+        siteHeader?.classList.toggle('is-over-manifesto', bounds.top <= 0 && bounds.bottom >= window.innerHeight);
+      };
+      const requestManifestoUpdate = () => {
+        if (!manifestoFrame) manifestoFrame = window.requestAnimationFrame(updateManifesto);
+      };
+      window.addEventListener('scroll', requestManifestoUpdate, { passive: true });
+      window.addEventListener('resize', requestManifestoUpdate, { passive: true });
+      updateManifesto();
+    }
+
+    const aboutLeadership = document.querySelector<HTMLElement>('[data-about-leadership]');
+    const leadershipImage = aboutLeadership?.querySelector<HTMLElement>('[data-leadership-image]');
+    if (aboutLeadership && leadershipImage && !reduceMotion) {
+      let leadershipFrame = 0;
+      const updateLeadershipParallax = () => {
+        leadershipFrame = 0;
+        const bounds = aboutLeadership.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+        const travel = window.innerWidth <= 800
+          ? Math.min(22, window.innerHeight * 0.025)
+          : Math.min(36, window.innerHeight * 0.04);
+        const offset = -progress * travel;
+        leadershipImage.style.setProperty('--leadership-parallax', `${offset.toFixed(1)}px`);
+      };
+      const requestLeadershipUpdate = () => {
+        if (!leadershipFrame) leadershipFrame = window.requestAnimationFrame(updateLeadershipParallax);
+      };
+      window.addEventListener('scroll', requestLeadershipUpdate, { passive: true });
+      window.addEventListener('resize', requestLeadershipUpdate, { passive: true });
+      updateLeadershipParallax();
+    }
+  </script>
+</Layout>

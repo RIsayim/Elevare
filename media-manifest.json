@@ -1,0 +1,23 @@
+{
+  "slots": [
+    {
+      "page": "src/pages/about.astro",
+      "slot": "About page leadership portrait with left-side copy and parallax background",
+      "assetPaths": ["public/images/about-leadership-founder.png"],
+      "sourceType": "generated",
+      "sourceReference": "01a13481-9d56-7d20-8acc-4e2d17817927/exec-fa8cb4ba-8b2b-4f7a-8d9b-f0b881ac744a.png",
+      "provenanceNote": "Generic, non-identifiable template portrait generated for this section; it does not depict a verified Solace executive.",
+      "reviewState": "awaiting_visual_review"
+    }
+  ],
+  "images": [
+    {
+      "assetPath": "public/images/about-leadership-founder.png",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a13481-9d56-7d20-8acc-4e2d17817927/exec-fa8cb4ba-8b2b-4f7a-8d9b-f0b881ac744a.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    }
+  ]
+}

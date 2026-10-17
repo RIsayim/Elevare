@@ -1,0 +1,491 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const projects = [
+  {
+    number: '1',
+    name: 'Stillwater House',
+    video: '/videos/solace-project-01.mp4',
+    image: '/images/solace-slider-theater.jpg',
+    alt: 'A warm, luxurious private home theater with an expansive cinema screen',
+    nextName: 'Canyon House',
+  },
+  {
+    number: '2',
+    name: 'Canyon House',
+    video: '/videos/solace-project-02.mp4',
+    image: '/images/solace-slider-motorized-shades.jpg',
+    alt: 'A serene modern living room with motorized roller shades across floor-to-ceiling windows',
+    nextName: 'Hillside House',
+  },
+  {
+    number: '3',
+    name: 'Hillside House',
+    video: '/videos/solace-project-03.mp4',
+    image: '/images/solace-slider-network-wifi.jpg',
+    alt: 'A discreet residential network rack integrated into a warm oak cabinet',
+    nextName: 'Garden House',
+  },
+  {
+    number: '4',
+    name: 'Garden House',
+    video: '/videos/solace-project-04.mp4',
+    image: '/images/solace-slider-home-audio.jpg',
+    alt: 'A refined living room with discreetly integrated architectural speakers and premium home audio',
+    nextName: 'Laurel House',
+  },
+  {
+    number: '5',
+    name: 'Laurel House',
+    video: '/videos/solace-project-05.mp4',
+    image: '/images/solace-slider-home-automation.jpg',
+    alt: 'A modern residence at dusk with layered automated lighting and a discreet wall keypad',
+    nextName: 'Stillwater House',
+  },
+];
+const initialProjectIndex = 0;
+---
+
+<Layout title="Solace — Technology, quietly integrated" description="Solace designs and integrates thoughtful home technology for remarkable residences. Lighting, sound, cinema, control, and the details that make them feel effortless.">
+  <SiteHeader />
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title" data-scroll-hero>
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <h1 id="hero-title">A more natural<br />way to experience<br />the art of<br />luxurious.</h1>
+        </div>
+        <div class="hero-image-wrap" data-hero-media>
+          <video class="hero-video" poster="/images/solace-hero.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="/videos/solace-hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-image-shade"></div>
+          
+        </div>
+        <div class="hero-bottomline">
+          <span>Residential technology, made personal</span>
+          <span>Los Angeles · Montecito · Beyond</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section-pad" id="intro" aria-labelledby="intro-title">
+      <div class="intro-heading">
+        <h2 id="intro-title">Thoughtful technology<br />for a more natural<br />way to live.</h2>
+        <a class="intro-consultation" href="/consultation/"><span aria-hidden="true"></span>Schedule a consultation</a>
+      </div>
+      <div class="intro-copy">
+        <p>Solace brings lighting, sound, climate, cinema, security, and control together as one considered experience. We take time to understand how you live, then collaborate with your architect, builder, and design team from the earliest plans through the final details. Every system is thoughtfully selected, carefully integrated, and tuned to your routines—so your home feels intuitive, comfortable, and unmistakably yours.</p>
+      </div>
+    </section>
+
+    <section class="slider-fullsize" id="projects" aria-labelledby="project-title" data-project-slider data-projects={JSON.stringify(projects)} data-initial-index={initialProjectIndex}>
+      <div class="slider-scene">
+        <img class="slider-background is-active" src={projects[initialProjectIndex].image} alt={projects[initialProjectIndex].alt} data-project-image />
+        <img class="slider-background is-next" src={projects[initialProjectIndex].image} alt="" aria-hidden="true" data-project-image-next />
+        <div class="slider-shade" aria-hidden="true"></div>
+        <p class="slider-eyebrow">Latest projects</p>
+        <div class="slider-counter" role="group" aria-label="Project pagination">
+          <span data-project-number aria-live="polite">{projects[initialProjectIndex].number}</span>
+          <div class="slider-progress" role="group" aria-label="Choose a project slide">
+            {projects.map((project, index) => (
+              <button
+                type="button"
+                class={`slider-progress-step${index <= initialProjectIndex ? ' is-passed' : ''}`}
+                data-project-page={index}
+                aria-label={`Show project ${project.number}: ${project.name}`}
+                aria-current={index === initialProjectIndex ? 'step' : undefined}
+              ></button>
+            ))}
+          </div>
+          <span>{projects.length}</span>
+        </div>
+        <div class="project-caption" data-project-caption>
+          <h2 id="project-title" data-project-name>{projects[initialProjectIndex].name}</h2>
+        </div>
+        <div class="slider-navigation" role="group" aria-label="Featured residence slides">
+          <button type="button" class="slider-arrow" data-project-prev aria-label="Previous project">←</button>
+          <button type="button" class="slider-arrow" data-project-next aria-label="Next project">→</button>
+        </div>
+        <a class="slider-all-projects" href="/projects/"><span aria-hidden="true"></span>All projects</a>
+        <button type="button" class="slider-preview" data-project-preview-next aria-label={`Go to next project: ${projects[initialProjectIndex].nextName}`}>
+          <video class="slider-preview-video" src={projects[initialProjectIndex].video} poster={projects[initialProjectIndex].image} muted autoplay loop playsinline preload="metadata" aria-hidden="true" data-project-preview-video></video>
+        </button>
+      </div>
+    </section>
+
+    <section class="experience-statement" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experiences that<br />exceed the reality<br />we live in</h2>
+    </section>
+
+    <section class="experience-gallery" id="work" aria-label="Solace residences and integrated living" data-parallax-gallery>
+      <div class="experience-mosaic">
+        <figure class="experience-image experience-image-one" data-scroll-row="first">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-01.jpg" -->
+          <img src="/images/experience-gallery-01.jpg" alt="A warm modern hillside residence in late afternoon light" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-two" data-scroll-row="first">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-02.jpg" -->
+          <img src="/images/experience-gallery-02.jpg" alt="A light-filled living room opening onto a private courtyard" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-three" data-scroll-row="first">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-03.jpg" -->
+          <img src="/images/experience-gallery-03.jpg" alt="A sheltered outdoor living area at sunset" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-four" data-scroll-row="first">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-08.jpg" -->
+          <img src="/images/experience-gallery-08.jpg" alt="A discreet home network cabinet integrated into an oak hallway" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-five" data-scroll-row="second">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-04.jpg" -->
+          <img src="/images/experience-gallery-04.jpg" alt="A private cinema with integrated acoustic wall treatment and warm lighting" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-six" data-scroll-row="second">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-05.jpg" -->
+          <img src="/images/experience-gallery-05.jpg" alt="A calm bedroom with motorized woven shades and soft morning light" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-seven" data-scroll-row="second">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-06.jpg" -->
+          <img src="/images/experience-gallery-06.jpg" alt="A warm contemporary kitchen and dining space" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-eight" data-scroll-row="second">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-07.jpg" -->
+          <img src="/images/experience-gallery-07.jpg" alt="A garden path and stone steps lit softly at blue hour" loading="lazy" />
+        </figure>
+        <figure class="experience-image experience-image-nine" data-scroll-row="first" aria-hidden="true">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-10.jpg" -->
+          <img src="/images/experience-gallery-10.jpg" alt="A limestone garden entry framed by mature olive trees" loading="eager" decoding="async" />
+        </figure>
+        <figure class="experience-image experience-image-ten" data-scroll-row="first" aria-hidden="true">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-11.jpg" -->
+          <img src="/images/experience-gallery-11.jpg" alt="A warm modern living room opening to an olive garden" loading="eager" decoding="async" />
+        </figure>
+        <figure class="experience-image experience-image-eleven" data-scroll-row="second" aria-hidden="true">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-09.jpg" -->
+          <img src="/images/experience-gallery-09.jpg" alt="An outdoor living terrace at golden hour" loading="eager" decoding="async" />
+        </figure>
+        <figure class="experience-image experience-image-twelve" data-scroll-row="second" aria-hidden="true">
+          <!-- RS:UPGRADE asset="public/images/experience-gallery-12.jpg" -->
+          <img src="/images/experience-gallery-12.jpg" alt="A softly illuminated garden path at blue hour" loading="eager" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="intro experience-about section-pad" id="solutions" aria-labelledby="experience-about-title">
+      <div class="intro-heading">
+        <h2 id="experience-about-title">We go wherever you are to give shape to the place you have envisioned.</h2>
+        <a class="intro-consultation" href="/consultation/"><span aria-hidden="true"></span>Schedule a consultation</a>
+      </div>
+      <div class="intro-copy experience-about-copy">
+        <p>Every home begins with a different way of living. We listen, then bring lighting, sound, climate, cinema, security, and control together around your routines and the architecture that holds them.</p>
+        <p>From the first conversation through the final details, we work alongside your design and build team to make technology feel natural, considered, and unmistakably yours.</p>
+      </div>
+    </section>
+
+    <section class="component component--images-overhead images-overhead design-story" id="approach" aria-labelledby="design-story-title" data-image-story>
+      <div class="design-story-stage">
+        <div class="design-story-canvas">
+          <figure class="design-story-main">
+            <video src="/videos/solace-project-01.mp4" aria-label="Solace design project video" autoplay muted loop playsinline preload="metadata"></video>
+          </figure>
+          <figure class="design-story-card design-story-materials" aria-hidden="true">
+            <!-- RS:UPGRADE asset="public/images/design-story-home-integration-living.webp" -->
+            <img src="/images/design-story-home-integration-living.webp" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <div class="design-story-inspired-copy">
+            <h2 class="design-story-title" id="design-story-title"><span>Be</span><span>Inspired</span></h2>
+          </div>
+        </div>
+        <figure class="design-story-card design-story-card-detail" aria-hidden="true">
+          <!-- RS:UPGRADE asset="public/images/design-story-home-integration-control.webp" -->
+          <img src="/images/design-story-home-integration-control.webp" alt="" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+  <script>
+    const imageStory = document.querySelector<HTMLElement>('[data-image-story]');
+    const storyMotionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (imageStory && storyMotionAllowed && 'IntersectionObserver' in window) {
+      imageStory.classList.add('is-pending');
+      const storyObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          imageStory.classList.replace('is-pending', 'is-visible');
+          storyObserver.disconnect();
+        }
+      }, { threshold: 0.18 });
+      storyObserver.observe(imageStory);
+    }
+
+    const storyCardImages = Array.from(imageStory?.querySelectorAll<HTMLImageElement>(
+      '.design-story-card-detail img, .design-story-materials img'
+    ) ?? []);
+    if (imageStory && storyCardImages.length && storyMotionAllowed) {
+      let storyParallaxFrame = 0;
+      const updateStoryCardParallax = () => {
+        storyParallaxFrame = 0;
+        storyCardImages.forEach((image) => {
+          const card = image.closest<HTMLElement>('.design-story-card');
+          if (!card) return;
+          const bounds = card.getBoundingClientRect();
+          const cardCenter = bounds.top + bounds.height / 2;
+          const viewportCenter = window.innerHeight / 2;
+          const offset = Math.max(-18, Math.min(18, (viewportCenter - cardCenter) * 0.05));
+          image.style.setProperty('--story-parallax-y', `${offset.toFixed(1)}px`);
+        });
+      };
+      const requestStoryCardParallax = () => {
+        if (!storyParallaxFrame) storyParallaxFrame = window.requestAnimationFrame(updateStoryCardParallax);
+      };
+      window.addEventListener('scroll', requestStoryCardParallax, { passive: true });
+      window.addEventListener('resize', requestStoryCardParallax, { passive: true });
+      updateStoryCardParallax();
+    }
+  </script>
+
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    type Project = { number: string; name: string; video: string; image: string; alt: string; nextName: string };
+    const slider = document.querySelector<HTMLElement>('[data-project-slider]');
+    const projects = JSON.parse(slider?.dataset.projects ?? '[]') as Project[];
+    let activeProject = Number(slider?.dataset.initialIndex ?? 0);
+    let projectImageCurrent = document.querySelector<HTMLImageElement>('[data-project-image]');
+    let projectImageIncoming = document.querySelector<HTMLImageElement>('[data-project-image-next]');
+    const projectPreviewVideo = document.querySelector<HTMLVideoElement>('[data-project-preview-video]');
+    const projectPreviewNext = document.querySelector<HTMLButtonElement>('[data-project-preview-next]');
+    const projectCaption = document.querySelector<HTMLElement>('[data-project-caption]');
+    const projectName = document.querySelector<HTMLElement>('[data-project-name]');
+    const projectNumber = document.querySelector<HTMLElement>('[data-project-number]');
+    const projectPages = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-project-page]'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const autoplayIntervalMs = 12000;
+    const projectTransitionDurationMs = 900;
+    const projectTransitionDelayMs = 0;
+    let projectSwapTimer = 0;
+    let projectContentTimer = 0;
+    let projectAutoplayTimer = 0;
+    let projectTransitioning = false;
+
+    function updateProjectPagination() {
+      projectPages.forEach((page, index) => {
+        const isCurrent = index === activeProject;
+        page.classList.toggle('is-passed', index <= activeProject);
+        if (isCurrent) page.setAttribute('aria-current', 'step');
+        else page.removeAttribute('aria-current');
+      });
+    }
+
+    function scheduleProjectAutoplay() {
+      window.clearTimeout(projectAutoplayTimer);
+      if (reduceMotion || document.hidden || projects.length < 2) return;
+      projectAutoplayTimer = window.setTimeout(() => showProject(activeProject + 1), autoplayIntervalMs);
+    }
+
+    updateProjectPagination();
+
+    projects.forEach((project) => {
+      const backgroundImage = new Image();
+      backgroundImage.src = project.image;
+    });
+
+    function showProject(index: number) {
+      const nextProjectIndex = ((index % projects.length) + projects.length) % projects.length;
+      if (nextProjectIndex === activeProject || projectTransitioning) return;
+      activeProject = nextProjectIndex;
+      updateProjectPagination();
+      scheduleProjectAutoplay();
+      const project = projects[activeProject];
+      const outgoingImage = projectImageCurrent;
+      const incomingImage = projectImageIncoming;
+      if (outgoingImage && incomingImage && projectPreviewVideo) {
+        projectTransitioning = true;
+        window.clearTimeout(projectSwapTimer);
+        window.clearTimeout(projectContentTimer);
+        const enterClass = 'is-entering-from-bottom';
+        const exitClass = 'is-exiting-up';
+        incomingImage.classList.remove('is-exiting-up', 'is-entering-from-bottom', 'is-arriving');
+        incomingImage.classList.add('is-next', enterClass);
+        incomingImage.src = project.image;
+        incomingImage.alt = '';
+        incomingImage.setAttribute('aria-hidden', 'true');
+        outgoingImage.classList.remove('is-next', 'is-entering-from-bottom', 'is-arriving', 'is-exiting-up');
+        outgoingImage.classList.add('is-active');
+
+        let slideStarted = false;
+        const startSlide = () => {
+          if (slideStarted) return;
+          slideStarted = true;
+          void incomingImage.offsetWidth;
+          window.requestAnimationFrame(() => {
+            incomingImage.classList.add('is-arriving');
+            incomingImage.classList.remove(enterClass);
+            outgoingImage.classList.add(exitClass);
+            projectPreviewVideo.classList.add('is-changing');
+            projectCaption?.classList.add('is-changing');
+            projectNumber?.classList.add('is-changing');
+            projectContentTimer = window.setTimeout(() => {
+              projectPreviewVideo.pause();
+              projectPreviewVideo.poster = project.image;
+              projectPreviewVideo.src = project.video;
+              projectPreviewVideo.load();
+              if (!reduceMotion) projectPreviewVideo.play().catch(() => {});
+              if (projectName) projectName.textContent = project.name;
+              if (projectNumber) projectNumber.textContent = project.number;
+              projectPreviewNext?.setAttribute('aria-label', `Go to next project: ${project.nextName}`);
+              window.requestAnimationFrame(() => {
+                projectPreviewVideo.classList.remove('is-changing');
+                projectCaption?.classList.remove('is-changing');
+                projectNumber?.classList.remove('is-changing');
+              });
+            }, reduceMotion ? 0 : projectTransitionDelayMs + projectTransitionDurationMs * 0.46);
+            projectSwapTimer = window.setTimeout(() => {
+              incomingImage.alt = project.alt;
+              incomingImage.removeAttribute('aria-hidden');
+              incomingImage.classList.remove('is-next', 'is-arriving', enterClass);
+              incomingImage.classList.add('is-active');
+              outgoingImage.alt = '';
+              outgoingImage.setAttribute('aria-hidden', 'true');
+              outgoingImage.classList.remove('is-active');
+              outgoingImage.classList.remove(exitClass, 'is-arriving', 'is-entering-from-bottom');
+              outgoingImage.classList.add('is-next');
+              projectImageCurrent = incomingImage;
+              projectImageIncoming = outgoingImage;
+              projectTransitioning = false;
+            }, reduceMotion ? 0 : projectTransitionDurationMs + projectTransitionDelayMs);
+          });
+        };
+
+        if (incomingImage.complete && incomingImage.naturalWidth > 0) startSlide();
+        else {
+          incomingImage.addEventListener('load', startSlide, { once: true });
+          incomingImage.addEventListener('error', startSlide, { once: true });
+        }
+      }
+    }
+
+    document.querySelector('[data-project-prev]')?.addEventListener('click', () => showProject(activeProject - 1));
+    document.querySelector('[data-project-next]')?.addEventListener('click', () => showProject(activeProject + 1));
+    projectPreviewNext?.addEventListener('click', () => showProject(activeProject + 1));
+    projectPages.forEach((page) => {
+      page.addEventListener('click', () => showProject(Number(page.dataset.projectPage)));
+    });
+    scheduleProjectAutoplay();
+    document.addEventListener('visibilitychange', scheduleProjectAutoplay);
+    if (reduceMotion) projectPreviewVideo?.pause();
+    else projectPreviewVideo?.play().catch(() => {});
+
+    const sliderSection = document.querySelector<HTMLElement>('.slider-fullsize');
+    const siteHeader = document.querySelector<HTMLElement>('.site-header');
+    if (sliderSection && siteHeader) {
+      const syncSliderHeader = () => {
+        const sliderBounds = sliderSection.getBoundingClientRect();
+        const headerBottom = siteHeader.getBoundingClientRect().bottom;
+        siteHeader.classList.toggle('is-over-slider', sliderBounds.top <= headerBottom && sliderBounds.bottom >= headerBottom);
+      };
+      window.addEventListener('scroll', syncSliderHeader, { passive: true });
+      window.addEventListener('resize', syncSliderHeader);
+      syncSliderHeader();
+    }
+
+    const scrollHero = document.querySelector<HTMLElement>('[data-scroll-hero]');
+    const heroMedia = document.querySelector<HTMLElement>('[data-hero-media]');
+    const heroVideo = document.querySelector<HTMLVideoElement>('.hero-video');
+    let heroRevealFallbackTimer = 0;
+    const revealHeroMedia = () => {
+      window.clearTimeout(heroRevealFallbackTimer);
+      heroMedia?.classList.add('is-loaded');
+    };
+    heroRevealFallbackTimer = window.setTimeout(revealHeroMedia, 1800);
+    if (heroVideo?.readyState && heroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) revealHeroMedia();
+    else {
+      heroVideo?.addEventListener('loadedmetadata', revealHeroMedia, { once: true });
+      heroVideo?.addEventListener('loadeddata', revealHeroMedia, { once: true });
+    }
+    heroVideo?.addEventListener('error', revealHeroMedia, { once: true });
+    if (reduceMotion) heroVideo?.pause();
+    else heroVideo?.play().catch(revealHeroMedia);
+
+    if (scrollHero && heroMedia && !reduceMotion) {
+      let frame = 0;
+      let displayedProgress = 0;
+      let displayedWidthProgress = 0;
+      let displayedMediaProgress = 0;
+      const updateScrollHero = () => {
+        frame = 0;
+        const rect = scrollHero.getBoundingClientRect();
+        const scrollDistance = Math.max(1, scrollHero.offsetHeight - window.innerHeight);
+        const targetProgress = Math.min(1, Math.max(0, -rect.top / scrollDistance));
+        displayedProgress += (targetProgress - displayedProgress) * 0.16;
+        const progress = displayedProgress;
+        const targetWidthProgress = Math.min(1, progress / 0.12);
+        const targetMediaProgress = Math.min(1, progress / 0.16);
+        displayedWidthProgress += (targetWidthProgress - displayedWidthProgress) * 0.075;
+        displayedMediaProgress += (targetMediaProgress - displayedMediaProgress) * 0.075;
+        const isStillMoving = Math.abs(targetProgress - displayedProgress) > 0.001
+          || Math.abs(targetWidthProgress - displayedWidthProgress) > 0.001
+          || Math.abs(targetMediaProgress - displayedMediaProgress) > 0.001;
+        if (isStillMoving) frame = window.requestAnimationFrame(updateScrollHero);
+        else {
+          displayedProgress = targetProgress;
+          displayedWidthProgress = targetWidthProgress;
+          displayedMediaProgress = targetMediaProgress;
+        }
+        const mobileHero = window.matchMedia('(max-width: 800px)').matches;
+        const initialMediaHeight = mobileHero ? 34 : 36;
+        const mediaOffset = mobileHero ? 125 : 200;
+        scrollHero.style.setProperty('--hero-progress', progress.toFixed(4));
+        scrollHero.style.setProperty('--hero-title-y', `${-progress * 190}px`);
+        scrollHero.style.setProperty('--hero-title-opacity', `${Math.max(0, 1 - progress * 1.65)}`);
+        scrollHero.style.setProperty('--hero-word-spacing', `${0.12 + progress * 0.34}em`);
+        scrollHero.style.setProperty('--hero-media-width', `${80 + displayedWidthProgress * 20}%`);
+        scrollHero.style.setProperty('--hero-media-height', `${initialMediaHeight + displayedMediaProgress * (90 - initialMediaHeight)}vh`);
+        scrollHero.style.setProperty('--hero-media-bottom', `${-mediaOffset + displayedMediaProgress * mediaOffset}px`);
+        scrollHero.style.setProperty('--hero-media-radius', `${4 * (1 - displayedMediaProgress)}px`);
+      };
+      const requestUpdate = () => {
+        if (!frame) frame = window.requestAnimationFrame(updateScrollHero);
+      };
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate, { passive: true });
+      updateScrollHero();
+    } else {
+      scrollHero?.style.setProperty('--hero-progress', '1');
+      scrollHero?.style.setProperty('--hero-title-y', '-190px');
+      scrollHero?.style.setProperty('--hero-title-opacity', '0');
+      scrollHero?.style.setProperty('--hero-word-spacing', '.46em');
+      scrollHero?.style.setProperty('--hero-media-width', '100%');
+      scrollHero?.style.setProperty('--hero-media-height', '90vh');
+      scrollHero?.style.setProperty('--hero-media-bottom', '0px');
+      scrollHero?.style.setProperty('--hero-media-radius', '0px');
+      heroMedia?.classList.add('is-loaded');
+    }
+
+    const parallaxGallery = document.querySelector<HTMLElement>('[data-parallax-gallery]');
+    const firstGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="first"]') ?? []);
+    const secondGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="second"]') ?? []);
+    if (parallaxGallery && firstGalleryRow.length && secondGalleryRow.length && !reduceMotion && window.matchMedia('(min-width: 801px)').matches) {
+      let parallaxFrame = 0;
+      const updateParallaxGallery = () => {
+        parallaxFrame = 0;
+        const bounds = parallaxGallery.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+        const rowTravelRange = Math.min(300, Math.max(180, window.innerWidth * 0.16));
+        const rowTravel = (0.5 - progress) * rowTravelRange;
+        firstGalleryRow.forEach((image) => image.style.setProperty('--gallery-x', `${rowTravel.toFixed(1)}px`));
+        secondGalleryRow.forEach((image) => image.style.setProperty('--gallery-x', `${(-rowTravel).toFixed(1)}px`));
+      };
+      const requestParallaxUpdate = () => {
+        if (!parallaxFrame) parallaxFrame = window.requestAnimationFrame(updateParallaxGallery);
+      };
+      window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+      window.addEventListener('resize', requestParallaxUpdate, { passive: true });
+      updateParallaxGallery();
+    }
+
+  </script>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const projects = [
+  {
+    number: '01',
+    name: 'Stillwater House',
+    systems: 'Private cinema · Lighting · Control',
+    image: '/images/solace-slider-theater.jpg',
+    alt: 'A warm, luxurious private home theater with an expansive cinema screen',
+  },
+  {
+    number: '02',
+    name: 'Canyon House',
+    systems: 'Motorized shades · Climate · Audio',
+    image: '/images/solace-slider-motorized-shades.jpg',
+    alt: 'A serene modern living room with motorized roller shades across floor-to-ceiling windows',
+  },
+  {
+    number: '03',
+    name: 'Hillside House',
+    systems: 'Network · Security · Home control',
+    image: '/images/solace-slider-network-wifi.jpg',
+    alt: 'A discreet residential network rack integrated into a warm oak cabinet',
+  },
+  {
+    number: '04',
+    name: 'Garden House',
+    systems: 'Whole-home audio · Lighting',
+    image: '/images/solace-slider-home-audio.jpg',
+    alt: 'A refined living room with discreetly integrated architectural speakers and premium home audio',
+  },
+  {
+    number: '05',
+    name: 'Laurel House',
+    systems: 'Home automation · Shading · Lighting',
+    image: '/images/solace-slider-home-automation.jpg',
+    alt: 'A modern residence at dusk with layered automated lighting and a discreet wall keypad',
+  },
+];
+---
+
+<Layout title="Projects — Solace Integrated Living" description="Explore homes where thoughtful technology, considered design, and everyday life come together.">
+  <SiteHeader />
+  <main class="projects-page">
+    <section class="hero about-hero projects-hero" aria-labelledby="projects-hero-title">
+      <div class="hero-copy projects-hero-copy">
+        <h1 id="projects-hero-title">Projects full of<br />life where design<br />and emotion meet</h1>
+      </div>
+    </section>
+
+    <section class="projects-archive" aria-labelledby="projects-archive-title">
+      <div class="projects-archive-heading">
+        <h2 id="projects-archive-title">Considered from the inside out.</h2>
+        <p>Every home begins with its own rhythm. We bring the details of light, sound, comfort, and control together around the people who live there.</p>
+      </div>
+
+      <div class="projects-archive-grid">
+        {projects.map((project, index) => (
+          <article class:list={['project-archive-card', `project-archive-card-${index + 1}`]}>
+            <figure class="project-archive-image">
+              <img src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
+            </figure>
+            <div class="project-archive-caption">
+              <span class="project-archive-number">{project.number} <span aria-hidden="true">/</span> 05</span>
+              <h3>{project.name}</h3>
+              <p>{project.systems}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+  <SiteFooter showIntro={false} />
+</Layout>
