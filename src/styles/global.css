@@ -159,12 +159,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--olive); outline
 	from { opacity: 0; transform: translateY(18px); }
 	to { opacity: 1; transform: translateY(0); }
 }
-.nav-submenu-overview { border-bottom: 1px solid rgba(40,41,35,.14); }
-.nav-submenu-overview a { display: flex !important; justify-content: space-between; color: var(--olive) !important; font-size: 11px !important; letter-spacing: .1em !important; text-transform: uppercase !important; }
-.nav-submenu-overview a span { font-size: 14px; }
-.mobile-nav-services-overview { margin-bottom: 4px; border-bottom: 1px solid rgba(40,41,35,.16); }
-.mobile-nav-services-list .mobile-nav-services-overview a { display: flex; justify-content: space-between; color: var(--olive); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
-.mobile-nav-services-list .mobile-nav-services-overview a span { font-size: 15px; }
 
 @media (max-width: 800px) {
 	.services-overview-hero { min-height: calc(100svh - 74px); padding: 72px 17px 80px; }
