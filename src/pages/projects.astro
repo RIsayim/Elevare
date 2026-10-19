@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import projects from '../data/projects';
+import { withBase } from '../utils/site-path';
 ---
 
 <Layout title="Projects — Solace Integrated Living" description="Explore homes where thoughtful technology, considered design, and everyday life come together.">
@@ -22,7 +23,7 @@ import projects from '../data/projects';
               const projectIndex = index * 2 + column;
               return (
                 <article class:list={['project-archive-card', `project-archive-card-${projectIndex + 1}`]} data-project-card={projectIndex}>
-                  <a class="project-archive-tile" href={`/projects/${project.slug}/`} aria-label={`View ${project.name}`} data-project-select={projectIndex}>
+                  <a class="project-archive-tile" href={withBase(`/projects/${project.slug}/`)} aria-label={`View ${project.name}`} data-project-select={projectIndex}>
                     <img src={project.image} alt={project.alt} loading={projectIndex < 2 ? 'eager' : 'lazy'} />
                     <span class="project-archive-view" aria-hidden="true">View</span>
                   </a>

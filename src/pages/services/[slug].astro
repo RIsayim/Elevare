@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { services } from '../../data/services';
+import { withBase } from '../../utils/site-path';
 
 export function getStaticPaths() {
 	return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -19,7 +20,7 @@ const { service } = Astro.props;
 				<p class="service-detail-kicker">Core service / Solace Integrated Living</p>
 				<h1 id="service-detail-title">{service.name}</h1>
 				<p class="service-detail-intro">{service.intro}</p>
-				<a class="service-detail-link" href="/consultation/">Discuss your home <span aria-hidden="true">↗</span></a>
+				<a class="service-detail-link" href={withBase('/consultation/')}>Discuss your home <span aria-hidden="true">↗</span></a>
 			</div>
 			<figure class="service-detail-image">
 				<img src={service.image} alt={service.imageAlt} fetchpriority="high" />
@@ -46,7 +47,7 @@ const { service } = Astro.props;
 
 		<section class="service-detail-cta" aria-label="Start a conversation about your home">
 			<p>Every home has its own character. Let’s shape a solution around yours.</p>
-			<a class="service-detail-link" href="/consultation/">Start a conversation <span aria-hidden="true">↗</span></a>
+			<a class="service-detail-link" href={withBase('/consultation/')}>Start a conversation <span aria-hidden="true">↗</span></a>
 		</section>
 	</main>
 	<SiteFooter showIntro={false} />

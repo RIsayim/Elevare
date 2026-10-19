@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import portfolioProjects from '../data/projects';
+import { withBase } from '../utils/site-path';
 
 const projects = portfolioProjects.map((project, index) => ({
   ...project,
@@ -22,8 +23,8 @@ const initialProjectIndex = 0;
           <h1 id="hero-title">A more natural<br />way to experience<br />the art of<br />luxurious.</h1>
         </div>
         <div class="hero-image-wrap" data-hero-media>
-          <video class="hero-video" poster="/images/solace-hero.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-            <source src="/videos/solace-hero.mp4" type="video/mp4" />
+          <video class="hero-video" poster={withBase('/images/solace-hero.webp')} autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src={withBase('/videos/solace-hero.mp4')} type="video/mp4" />
           </video>
           <div class="hero-image-shade"></div>
           
@@ -38,7 +39,7 @@ const initialProjectIndex = 0;
     <section class="intro section-pad" id="intro" aria-labelledby="intro-title">
       <div class="intro-heading">
         <h2 id="intro-title">Thoughtful technology<br />for a more natural<br />way to live.</h2>
-        <a class="intro-consultation" href="/consultation/"><span aria-hidden="true"></span>Schedule a consultation</a>
+        <a class="intro-consultation" href={withBase('/consultation/')}><span aria-hidden="true"></span>Schedule a consultation</a>
       </div>
       <div class="intro-copy">
         <p>Solace brings lighting, sound, climate, cinema, security, and control together as one considered experience. We take time to understand how you live, then collaborate with your architect, builder, and design team from the earliest plans through the final details. Every system is thoughtfully selected, carefully integrated, and tuned to your routines—so your home feels intuitive, comfortable, and unmistakably yours.</p>
@@ -73,7 +74,7 @@ const initialProjectIndex = 0;
           <button type="button" class="slider-arrow" data-project-prev aria-label="Previous project">←</button>
           <button type="button" class="slider-arrow" data-project-next aria-label="Next project">→</button>
         </div>
-        <a class="slider-all-projects" href="/projects/"><span aria-hidden="true"></span>All projects</a>
+        <a class="slider-all-projects" href={withBase('/projects/')}><span aria-hidden="true"></span>All projects</a>
         <button type="button" class="slider-preview" data-project-preview-next aria-label={`Go to next project: ${projects[initialProjectIndex].nextName}`}>
           <video class="slider-preview-video" src={projects[initialProjectIndex].video} poster={projects[initialProjectIndex].image} muted autoplay loop playsinline preload="metadata" aria-hidden="true" data-project-preview-video></video>
         </button>
@@ -88,51 +89,51 @@ const initialProjectIndex = 0;
       <div class="experience-mosaic">
         <figure class="experience-image experience-image-one" data-scroll-row="first">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-01.jpg" -->
-          <img src="/images/experience-gallery-01.jpg" alt="A warm modern hillside residence in late afternoon light" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-01.jpg')} alt="A warm modern hillside residence in late afternoon light" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-two" data-scroll-row="first">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-02.jpg" -->
-          <img src="/images/experience-gallery-02.jpg" alt="A light-filled living room opening onto a private courtyard" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-02.jpg')} alt="A light-filled living room opening onto a private courtyard" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-three" data-scroll-row="first">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-03.jpg" -->
-          <img src="/images/experience-gallery-03.jpg" alt="A sheltered outdoor living area at sunset" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-03.jpg')} alt="A sheltered outdoor living area at sunset" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-four" data-scroll-row="first">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-08.jpg" -->
-          <img src="/images/experience-gallery-08.jpg" alt="A discreet home network cabinet integrated into an oak hallway" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-08.jpg')} alt="A discreet home network cabinet integrated into an oak hallway" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-five" data-scroll-row="second">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-04.jpg" -->
-          <img src="/images/experience-gallery-04.jpg" alt="A private cinema with integrated acoustic wall treatment and warm lighting" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-04.jpg')} alt="A private cinema with integrated acoustic wall treatment and warm lighting" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-six" data-scroll-row="second">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-05.jpg" -->
-          <img src="/images/experience-gallery-05.jpg" alt="A calm bedroom with motorized woven shades and soft morning light" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-05.jpg')} alt="A calm bedroom with motorized woven shades and soft morning light" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-seven" data-scroll-row="second">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-06.jpg" -->
-          <img src="/images/experience-gallery-06.jpg" alt="A warm contemporary kitchen and dining space" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-06.jpg')} alt="A warm contemporary kitchen and dining space" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-eight" data-scroll-row="second">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-07.jpg" -->
-          <img src="/images/experience-gallery-07.jpg" alt="A garden path and stone steps lit softly at blue hour" loading="lazy" />
+          <img src={withBase('/images/experience-gallery-07.jpg')} alt="A garden path and stone steps lit softly at blue hour" loading="lazy" />
         </figure>
         <figure class="experience-image experience-image-nine" data-scroll-row="first" aria-hidden="true">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-10.jpg" -->
-          <img src="/images/experience-gallery-10.jpg" alt="A limestone garden entry framed by mature olive trees" loading="eager" decoding="async" />
+          <img src={withBase('/images/experience-gallery-10.jpg')} alt="A limestone garden entry framed by mature olive trees" loading="eager" decoding="async" />
         </figure>
         <figure class="experience-image experience-image-ten" data-scroll-row="first" aria-hidden="true">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-11.jpg" -->
-          <img src="/images/experience-gallery-11.jpg" alt="A warm modern living room opening to an olive garden" loading="eager" decoding="async" />
+          <img src={withBase('/images/experience-gallery-11.jpg')} alt="A warm modern living room opening to an olive garden" loading="eager" decoding="async" />
         </figure>
         <figure class="experience-image experience-image-eleven" data-scroll-row="second" aria-hidden="true">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-09.jpg" -->
-          <img src="/images/experience-gallery-09.jpg" alt="An outdoor living terrace at golden hour" loading="eager" decoding="async" />
+          <img src={withBase('/images/experience-gallery-09.jpg')} alt="An outdoor living terrace at golden hour" loading="eager" decoding="async" />
         </figure>
         <figure class="experience-image experience-image-twelve" data-scroll-row="second" aria-hidden="true">
           <!-- RS:UPGRADE asset="public/images/experience-gallery-12.jpg" -->
-          <img src="/images/experience-gallery-12.jpg" alt="A softly illuminated garden path at blue hour" loading="eager" decoding="async" />
+          <img src={withBase('/images/experience-gallery-12.jpg')} alt="A softly illuminated garden path at blue hour" loading="eager" decoding="async" />
         </figure>
       </div>
     </section>
@@ -140,7 +141,7 @@ const initialProjectIndex = 0;
     <section class="intro experience-about section-pad" id="solutions" aria-labelledby="experience-about-title">
       <div class="intro-heading">
         <h2 id="experience-about-title">We go wherever you are to give shape to the place you have envisioned.</h2>
-        <a class="intro-consultation" href="/consultation/"><span aria-hidden="true"></span>Schedule a consultation</a>
+        <a class="intro-consultation" href={withBase('/consultation/')}><span aria-hidden="true"></span>Schedule a consultation</a>
       </div>
       <div class="intro-copy experience-about-copy">
         <p>Every home begins with a different way of living. We listen, then bring lighting, sound, climate, cinema, security, and control together around your routines and the architecture that holds them.</p>
@@ -152,11 +153,11 @@ const initialProjectIndex = 0;
       <div class="design-story-stage">
         <div class="design-story-canvas">
           <figure class="design-story-main">
-            <video src="/videos/solace-project-01.mp4" aria-label="Solace design project video" autoplay muted loop playsinline preload="metadata"></video>
+            <video src={withBase('/videos/solace-project-01.mp4')} aria-label="Solace design project video" autoplay muted loop playsinline preload="metadata"></video>
           </figure>
           <figure class="design-story-card design-story-materials" aria-hidden="true">
             <!-- RS:UPGRADE asset="public/images/design-story-home-integration-living.webp" -->
-            <img src="/images/design-story-home-integration-living.webp" alt="" loading="lazy" decoding="async" />
+            <img src={withBase('/images/design-story-home-integration-living.webp')} alt="" loading="lazy" decoding="async" />
           </figure>
           <div class="design-story-inspired-copy">
             <h2 class="design-story-title" id="design-story-title"><span>Be</span><span>Inspired</span></h2>
@@ -164,7 +165,7 @@ const initialProjectIndex = 0;
         </div>
         <figure class="design-story-card design-story-card-detail" aria-hidden="true">
           <!-- RS:UPGRADE asset="public/images/design-story-home-integration-control.webp" -->
-          <img src="/images/design-story-home-integration-control.webp" alt="" loading="lazy" decoding="async" />
+          <img src={withBase('/images/design-story-home-integration-control.webp')} alt="" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>

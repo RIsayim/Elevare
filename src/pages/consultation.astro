@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { withBase } from '../utils/site-path';
 ---
 
 <Layout title="Consultation — Solace Integrated Living" description="Book a thoughtful first conversation with Solace about your home.">
@@ -16,8 +17,8 @@ import SiteFooter from '../components/SiteFooter.astro';
     <section class="consultation-booking" aria-labelledby="consultation-meet-title">
       <div class="consultation-booking-layout">
         <figure class="consultation-booking-image">
-          <video class="consultation-booking-video" poster="/images/solace-hero.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-            <source src="/videos/solace-hero.mp4" type="video/mp4" />
+          <video class="consultation-booking-video" poster={withBase('/images/solace-hero.webp')} autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src={withBase('/videos/solace-hero.mp4')} type="video/mp4" />
           </video>
           <figcaption><span>Solace Integrated Living</span><span>Technology, quietly considered</span></figcaption>
         </figure>

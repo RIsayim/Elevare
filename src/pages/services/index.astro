@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { services } from '../../data/services';
+import { withBase } from '../../utils/site-path';
 ---
 
 <Layout title="Core Services — Solace Integrated Living" description="Explore thoughtful home technology from Solace, including lighting, audio, networking, security, automated shades, and home theater.">
@@ -21,7 +22,7 @@ import { services } from '../../data/services';
 
 		<section class="services-overview-list" id="services-list" aria-label="Explore Solace core services">
 			{services.map((service, index) => (
-				<a class="services-overview-card" href={`/services/${service.slug}/`} aria-label={`Explore ${service.name}`}>
+				<a class="services-overview-card" href={withBase(`/services/${service.slug}/`)} aria-label={`Explore ${service.name}`}>
 					<figure class="services-overview-card-image">
 						<img src={service.image} alt={service.imageAlt} loading="lazy" decoding="async" />
 					</figure>

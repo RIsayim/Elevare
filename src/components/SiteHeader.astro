@@ -1,9 +1,12 @@
+---
+import { withBase } from '../utils/site-path';
+---
 <header class="site-header" id="top">
   <nav class="nav-side nav-left" aria-label="Main navigation">
-    <a href="/about/">About us</a>
-    <a href="/projects/">Projects</a>
+    <a href={withBase('/about/')}>About us</a>
+    <a href={withBase('/projects/')}>Projects</a>
   </nav>
-  <a class="wordmark" href="/#top" aria-label="Solace home">
+  <a class="wordmark" href={withBase('/#top')} aria-label="Solace home">
     <span class="wordmark-name">SOLACE</span>
     <span class="wordmark-caption">INTEGRATED LIVING</span>
   </a>
@@ -11,15 +14,15 @@
     <div class="nav-dropdown" data-nav-dropdown>
       <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="core-services-menu" data-nav-dropdown-trigger>Core services <span aria-hidden="true">⌄</span></button>
       <ul class="nav-submenu" id="core-services-menu" hidden>
-        <li><a href="/services/security-cameras/">Security &amp; Cameras</a></li>
-        <li><a href="/services/home-network-wifi/">Home Network &amp; WiFi</a></li>
-        <li><a href="/services/whole-home-audio/">Whole-Home Audio</a></li>
-        <li><a href="/services/intelligent-lighting/">Intelligent Lighting</a></li>
-        <li><a href="/services/automated-shades/">Automated Shades</a></li>
-        <li><a href="/services/home-theater/">Home Theater</a></li>
+        <li><a href={withBase('/services/security-cameras/')}>Security &amp; Cameras</a></li>
+        <li><a href={withBase('/services/home-network-wifi/')}>Home Network &amp; WiFi</a></li>
+        <li><a href={withBase('/services/whole-home-audio/')}>Whole-Home Audio</a></li>
+        <li><a href={withBase('/services/intelligent-lighting/')}>Intelligent Lighting</a></li>
+        <li><a href={withBase('/services/automated-shades/')}>Automated Shades</a></li>
+        <li><a href={withBase('/services/home-theater/')}>Home Theater</a></li>
       </ul>
     </div>
-    <a class="nav-consultation" href="/consultation/">Consultation</a>
+    <a class="nav-consultation" href={withBase('/consultation/')}>Consultation</a>
   </nav>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
     <span></span><span></span>
@@ -27,20 +30,20 @@
 </header>
 
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-  <a href="/about/">About us <span>01</span></a>
-  <a href="/projects/">Projects <span>02</span></a>
+  <a href={withBase('/about/')}>About us <span>01</span></a>
+  <a href={withBase('/projects/')}>Projects <span>02</span></a>
   <div class="mobile-nav-services">
     <button class="mobile-nav-services-trigger" type="button" aria-expanded="false" aria-controls="mobile-core-services-menu" data-mobile-services-trigger>Core services <span>03</span></button>
     <ul class="mobile-nav-services-list" id="mobile-core-services-menu" hidden>
-      <li><a href="/services/security-cameras/">Security &amp; Cameras</a></li>
-      <li><a href="/services/home-network-wifi/">Home Network &amp; WiFi</a></li>
-      <li><a href="/services/whole-home-audio/">Whole-Home Audio</a></li>
-      <li><a href="/services/intelligent-lighting/">Intelligent Lighting</a></li>
-      <li><a href="/services/automated-shades/">Automated Shades</a></li>
-      <li><a href="/services/home-theater/">Home Theater</a></li>
+      <li><a href={withBase('/services/security-cameras/')}>Security &amp; Cameras</a></li>
+      <li><a href={withBase('/services/home-network-wifi/')}>Home Network &amp; WiFi</a></li>
+      <li><a href={withBase('/services/whole-home-audio/')}>Whole-Home Audio</a></li>
+      <li><a href={withBase('/services/intelligent-lighting/')}>Intelligent Lighting</a></li>
+      <li><a href={withBase('/services/automated-shades/')}>Automated Shades</a></li>
+      <li><a href={withBase('/services/home-theater/')}>Home Theater</a></li>
     </ul>
   </div>
-  <a href="/consultation/">Consultation <span>04</span></a>
+  <a href={withBase('/consultation/')}>Consultation <span>04</span></a>
 </nav>
 
 <script>

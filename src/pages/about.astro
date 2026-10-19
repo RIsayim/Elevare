@@ -2,24 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { withBase } from '../utils/site-path';
 
 const aboutGallery = [
-  { src: '/images/about-gallery-control.webp', className: 'experience-image-one', row: 'first', alt: 'A discreet wall keypad in a warm modern home entry' },
-  { src: '/images/about-gallery-residence.webp', className: 'experience-image-two', row: 'first', alt: 'A California hillside residence with integrated evening lighting' },
-  { src: '/images/about-gallery-living.webp', className: 'experience-image-three', row: 'first', alt: 'A connected great room with motorized shades and layered lighting' },
-  { src: '/images/about-gallery-audio.webp', className: 'experience-image-four', row: 'first', alt: 'A calm listening room with discreet architectural audio' },
-  { src: '/images/about-gallery-cinema.webp', className: 'experience-image-five', row: 'second', alt: 'A private home cinema with integrated acoustics and low step lighting' },
-  { src: '/images/about-gallery-shades.webp', className: 'experience-image-six', row: 'second', alt: 'A restful bedroom with motorized shades and soft natural light' },
-  { src: '/images/about-gallery-landscape-lighting.webp', className: 'experience-image-seven', row: 'second', alt: 'A private terrace with discreet outdoor audio and landscape lighting' },
-  { src: '/images/about-gallery-home-control.webp', className: 'experience-image-eight', row: 'second', alt: 'A home entry with understated lighting and integrated control' },
+  { src: withBase('/images/about-gallery-control.webp'), className: 'experience-image-one', row: 'first', alt: 'A discreet wall keypad in a warm modern home entry' },
+  { src: withBase('/images/about-gallery-residence.webp'), className: 'experience-image-two', row: 'first', alt: 'A California hillside residence with integrated evening lighting' },
+  { src: withBase('/images/about-gallery-living.webp'), className: 'experience-image-three', row: 'first', alt: 'A connected great room with motorized shades and layered lighting' },
+  { src: withBase('/images/about-gallery-audio.webp'), className: 'experience-image-four', row: 'first', alt: 'A calm listening room with discreet architectural audio' },
+  { src: withBase('/images/about-gallery-cinema.webp'), className: 'experience-image-five', row: 'second', alt: 'A private home cinema with integrated acoustics and low step lighting' },
+  { src: withBase('/images/about-gallery-shades.webp'), className: 'experience-image-six', row: 'second', alt: 'A restful bedroom with motorized shades and soft natural light' },
+  { src: withBase('/images/about-gallery-landscape-lighting.webp'), className: 'experience-image-seven', row: 'second', alt: 'A private terrace with discreet outdoor audio and landscape lighting' },
+  { src: withBase('/images/about-gallery-home-control.webp'), className: 'experience-image-eight', row: 'second', alt: 'A home entry with understated lighting and integrated control' },
   // RS:UPGRADE asset="public/images/experience-gallery-10.jpg"
-  { src: '/images/experience-gallery-10.jpg', className: 'experience-image-nine', row: 'first', alt: '', decorative: true },
+  { src: withBase('/images/experience-gallery-10.jpg'), className: 'experience-image-nine', row: 'first', alt: '', decorative: true },
   // RS:UPGRADE asset="public/images/experience-gallery-11.jpg"
-  { src: '/images/experience-gallery-11.jpg', className: 'experience-image-ten', row: 'first', alt: '', decorative: true },
+  { src: withBase('/images/experience-gallery-11.jpg'), className: 'experience-image-ten', row: 'first', alt: '', decorative: true },
   // RS:UPGRADE asset="public/images/experience-gallery-09.jpg"
-  { src: '/images/experience-gallery-09.jpg', className: 'experience-image-eleven', row: 'second', alt: '', decorative: true },
+  { src: withBase('/images/experience-gallery-09.jpg'), className: 'experience-image-eleven', row: 'second', alt: '', decorative: true },
   // RS:UPGRADE asset="public/images/experience-gallery-12.jpg"
-  { src: '/images/experience-gallery-12.jpg', className: 'experience-image-twelve', row: 'second', alt: '', decorative: true },
+  { src: withBase('/images/experience-gallery-12.jpg'), className: 'experience-image-twelve', row: 'second', alt: '', decorative: true },
 ];
 ---
 
@@ -51,7 +52,7 @@ const aboutGallery = [
 
     <section class="about-leadership" data-about-leadership aria-labelledby="about-leadership-title">
       <figure class="about-leadership-image" aria-hidden="true">
-        <img src="/images/about-leadership-founder.png" alt="" width="1664" height="1024" loading="lazy" decoding="async" data-leadership-image />
+        <img src={withBase('/images/about-leadership-founder.png')} alt="" width="1664" height="1024" loading="lazy" decoding="async" data-leadership-image />
       </figure>
       <div class="about-leadership-inner">
         <div class="about-leadership-copy">
@@ -102,7 +103,7 @@ const aboutGallery = [
     <section class="about-manifesto" data-about-manifesto aria-labelledby="about-manifesto-title">
       <div class="about-manifesto-stage" data-manifesto-stage>
         <figure class="about-manifesto-image">
-          <img src="/images/about-manifesto-background.webp" alt="A coastal residence with a calm sea view, layered lighting, and discreet home controls" loading="lazy" decoding="async" />
+          <img src={withBase('/images/about-manifesto-background.webp')} alt="A coastal residence with a calm sea view, layered lighting, and discreet home controls" loading="lazy" decoding="async" />
           <span class="about-manifesto-shade" data-manifesto-shade aria-hidden="true"></span>
         </figure>
         <div class="about-manifesto-copy">

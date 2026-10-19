@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/site-path';
+
 interface Props {
   showIntro?: boolean;
 }
@@ -18,7 +20,7 @@ const currentYear = new Date().getFullYear();
     <section class="footer-contact-grid" aria-label="Contact Solace">
       <div class="footer-contact-item">
         <p class="footer-contact-label"><span aria-hidden="true"></span>Contact us</p>
-        <a class="footer-contact-value" href="/contact/">Form</a>
+        <a class="footer-contact-value" href={withBase('/contact/')}>Form</a>
       </div>
       <div class="footer-contact-item">
         <p class="footer-contact-label"><span aria-hidden="true"></span>Email us</p>
@@ -26,7 +28,7 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="footer-contact-item">
         <p class="footer-contact-label"><span aria-hidden="true"></span>Start a project</p>
-        <a class="footer-contact-value" href="/consultation/">Schedule a consultation</a>
+        <a class="footer-contact-value" href={withBase('/consultation/')}>Schedule a consultation</a>
       </div>
     </section>
 
@@ -65,20 +67,20 @@ const currentYear = new Date().getFullYear();
     <section class="footer-members" aria-labelledby="footer-members-title">
       <h2 class="footer-section-heading" id="footer-members-title">Members of</h2>
       <div class="footer-members-logos">
-        <div class="footer-member-logo"><img src="/images/members/savant.svg" alt="Savant" loading="lazy" /></div>
-        <div class="footer-member-logo"><img src="/images/members/josh-ai.webp" alt="Josh.ai" loading="lazy" /></div>
-        <div class="footer-member-logo"><img src="/images/members/crestron.png" alt="Crestron" loading="lazy" /></div>
-        <div class="footer-member-logo footer-member-logo-lutron"><img src="/images/members/lutron.png" alt="Lutron" loading="lazy" /></div>
-        <div class="footer-member-logo"><img src="/images/members/control4-wordmark.png" alt="Control4" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src={withBase('/images/members/savant.svg')} alt="Savant" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src={withBase('/images/members/josh-ai.webp')} alt="Josh.ai" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src={withBase('/images/members/crestron.png')} alt="Crestron" loading="lazy" /></div>
+        <div class="footer-member-logo footer-member-logo-lutron"><img src={withBase('/images/members/lutron.png')} alt="Lutron" loading="lazy" /></div>
+        <div class="footer-member-logo"><img src={withBase('/images/members/control4-wordmark.png')} alt="Control4" loading="lazy" /></div>
       </div>
     </section>
 
     <div class="footer-bottom">
       <p>&copy; {currentYear} Solace Integrated Living &middot; Los Angeles &middot; Montecito &middot; California</p>
       <nav aria-label="Footer navigation">
-        <a href="/projects/">Projects</a>
-        <a href="/consultation/">Consultation</a>
-        <a href="/#top">Back to top &uarr;</a>
+        <a href={withBase('/projects/')}>Projects</a>
+        <a href={withBase('/consultation/')}>Consultation</a>
+        <a href={withBase('/#top')}>Back to top &uarr;</a>
       </nav>
     </div>
   </div>

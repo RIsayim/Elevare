@@ -1,3 +1,5 @@
+import { withBase } from '../utils/site-path';
+
 export interface ServiceBenefit {
 	title: string;
 	text: string;
@@ -17,7 +19,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'security-cameras',
 		name: 'Security & Cameras',
-		image: '/images/about-gallery-control.webp',
+		image: withBase('/images/about-gallery-control.webp'),
 		imageAlt: 'A discreetly integrated home control keypad in a warm modern interior',
 		intro: 'Feel more at ease at home with a security system designed around your property, your routines, and the way you want to stay connected.',
 		statement: 'A considered approach to peace of mind.',
@@ -30,7 +32,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'home-network-wifi',
 		name: 'Home Network & WiFi',
-		image: '/images/solace-slider-network-wifi.jpg',
+		image: withBase('/images/solace-slider-network-wifi.jpg'),
 		imageAlt: 'A contemporary residence with a connected home network',
 		intro: 'A dependable home network is the quiet foundation behind work, entertainment, communication, and every connected system in the house.',
 		statement: 'Reliable connection, built into the home.',
@@ -43,7 +45,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'whole-home-audio',
 		name: 'Whole-Home Audio',
-		image: '/images/about-gallery-audio.webp',
+		image: withBase('/images/about-gallery-audio.webp'),
 		imageAlt: 'A serene listening room with integrated architectural audio',
 		intro: 'Bring music into the rooms where life happens, with sound that feels natural in the space and simple to enjoy throughout the home.',
 		statement: 'Sound that moves naturally with your day.',
@@ -56,7 +58,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'intelligent-lighting',
 		name: 'Intelligent Lighting',
-		image: '/images/garden-lighting.webp',
+		image: withBase('/images/garden-lighting.webp'),
 		imageAlt: 'Warm architectural lighting bringing a garden terrace to life',
 		intro: 'Thoughtful lighting brings out the character of a room, supports daily routines, and lets the mood of your home shift with the moment.',
 		statement: 'Light shaped around the way you live.',
@@ -69,7 +71,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'automated-shades',
 		name: 'Automated Shades',
-		image: '/images/about-gallery-shades.webp',
+		image: withBase('/images/about-gallery-shades.webp'),
 		imageAlt: 'Soft daylight filtered through motorized shades in a calm bedroom',
 		intro: 'Motorized shades give you an effortless way to welcome daylight, soften glare, and create privacy while preserving the design of your windows.',
 		statement: 'Daylight and privacy, in balance.',
@@ -82,7 +84,7 @@ export const services: CoreService[] = [
 	{
 		slug: 'home-theater',
 		name: 'Home Theater',
-		image: '/images/private-cinema.webp',
+		image: withBase('/images/private-cinema.webp'),
 		imageAlt: 'A private home cinema with immersive seating and integrated lighting',
 		intro: 'Create a place to settle in and enjoy films, sports, and music with immersive picture and sound, carefully integrated into your home.',
 		statement: 'A cinema experience made personal.',
