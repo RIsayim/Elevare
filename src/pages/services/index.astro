@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { services } from '../../data/services';
+---
+
+<Layout title="Core Services — Solace Integrated Living" description="Explore thoughtful home technology from Solace, including lighting, audio, networking, security, automated shades, and home theater.">
+	<SiteHeader />
+	<main class="services-overview-page">
+		<section class="services-overview-hero" aria-labelledby="services-overview-title">
+			<p class="services-overview-kicker">Core services / Solace Integrated Living</p>
+			<h1 id="services-overview-title" class="services-overview-title">
+				<span>Thoughtful technology</span>
+				<span>for beautifully</span>
+				<span>integrated living</span>
+			</h1>
+			<p class="services-overview-intro">We bring lighting, sound, security, comfort, and entertainment together in ways that feel natural to your home and the way you live.</p>
+			<a class="services-overview-discover" href="#services-list">Explore our services <span aria-hidden="true">↓</span></a>
+		</section>
+
+		<section class="services-overview-list" id="services-list" aria-label="Explore Solace core services">
+			{services.map((service, index) => (
+				<a class="services-overview-card" href={`/services/${service.slug}/`} aria-label={`Explore ${service.name}`}>
+					<figure class="services-overview-card-image">
+						<img src={service.image} alt={service.imageAlt} loading="lazy" decoding="async" />
+					</figure>
+					<div class="services-overview-card-copy">
+						<p class="services-overview-card-number">0{index + 1} / 06</p>
+						<h2>{service.name}</h2>
+						<p>{service.intro}</p>
+						<span class="services-overview-card-link">Discover service <span aria-hidden="true">↗</span></span>
+					</div>
+				</a>
+			))}
+		</section>
+	</main>
+	<SiteFooter showIntro={false} />
+</Layout>

@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import projects from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: (typeof projects)[number] };
+const projectIndex = projects.findIndex((item) => item.slug === project.slug);
+const nextProject = projects[(projectIndex + 1) % projects.length];
+---
+
+<Layout title={`${project.name} — Solace Integrated Living`} description={`${project.name}: ${project.storyTitle}`}>
+  <SiteHeader />
+  <main class="project-detail-page">
+    <section class="project-detail-heading" aria-labelledby="project-detail-title">
+      <h1 id="project-detail-title">{project.name}</h1>
+    </section>
+
+    <section class="project-detail-feature" aria-label={`${project.name} video`} data-project-video>
+      <video class="project-detail-video" autoplay muted loop playsinline preload="metadata" poster={project.image} aria-label={`Video tour of ${project.name}`}>
+        <source src={project.video} type="video/mp4" />
+      </video>
+    </section>
+
+    <section class="project-story" aria-labelledby="project-story-title">
+      <div class="project-story-inner">
+        <h2 id="project-story-title">{project.storyTitle}</h2>
+        <div class="project-story-copy">
+          <p>{project.storyLeft}</p>
+          <p>{project.storyRight}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail-statement" aria-label="Project statement" data-project-statement>
+      <h2>{project.statement}</h2>
+    </section>
+
+    <section class="project-detail-image-section" aria-label={`${project.name} project photography`} data-project-image-section>
+      <div class="project-detail-image-stage">
+        <figure class="about-manifesto-image project-detail-image">
+          <img src={project.galleryImage} alt={project.galleryAlt} loading="lazy" decoding="async" />
+          <span class="about-manifesto-shade" data-project-image-shade aria-hidden="true"></span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-story" aria-labelledby="project-followup-title">
+      <div class="project-story-inner">
+        <h2 id="project-followup-title">{project.followupTitle}</h2>
+        <div class="project-story-copy">
+          <p>{project.followupLeft}</p>
+          <p>{project.followupRight}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slider-fullsize project-next-project" aria-label={`Next project: ${nextProject.name}`}>
+      <div class="slider-scene project-next-scene">
+        <img class="slider-background is-active" src={nextProject.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        <div class="slider-shade" aria-hidden="true"></div>
+        <p class="slider-eyebrow">Next project</p>
+        <div class="project-caption">
+          <a href={`/projects/${nextProject.slug}/`} aria-label={`View ${nextProject.name} project`}>
+            <h2>{nextProject.name}</h2>
+          </a>
+        </div>
+        <a class="slider-preview" href={`/projects/${nextProject.slug}/`} aria-label={`View ${nextProject.name} project`}>
+          <video src={nextProject.video} poster={nextProject.image} muted autoplay loop playsinline preload="metadata" aria-hidden="true"></video>
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter showIntro={false} />
+</Layout>
+
+<script>
+  const projectStatement = document.querySelector<HTMLElement>('[data-project-statement]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (projectStatement && !reducedMotion && 'IntersectionObserver' in window) {
+    projectStatement.classList.add('is-pending');
+    const statementObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        projectStatement.classList.replace('is-pending', 'is-visible');
+        statementObserver.disconnect();
+      }
+    }, { threshold: 0.16 });
+    statementObserver.observe(projectStatement);
+  }
+
+  const projectImageSection = document.querySelector<HTMLElement>('[data-project-image-section]');
+  const projectImageStage = projectImageSection?.querySelector<HTMLElement>('.project-detail-image-stage');
+  const projectImageShade = projectImageSection?.querySelector<HTMLElement>('[data-project-image-shade]');
+
+  if (projectImageSection && projectImageStage && projectImageShade) {
+    let imageFrame = 0;
+    const updateProjectImage = () => {
+      imageFrame = 0;
+      const bounds = projectImageSection.getBoundingClientRect();
+      const travel = Math.max(1, projectImageSection.offsetHeight - projectImageStage.offsetHeight);
+      const progress = reducedMotion ? 1 : Math.min(1, Math.max(0, -bounds.top / travel));
+      const revealProgress = Math.min(1, progress / 0.52);
+      projectImageShade.style.setProperty('--manifesto-shade-opacity', (0.74 * (1 - revealProgress)).toFixed(3));
+    };
+    const requestProjectImageUpdate = () => {
+      if (!imageFrame) imageFrame = window.requestAnimationFrame(updateProjectImage);
+    };
+    window.addEventListener('scroll', requestProjectImageUpdate, { passive: true });
+    window.addEventListener('resize', requestProjectImageUpdate, { passive: true });
+    updateProjectImage();
+  }
+</script>

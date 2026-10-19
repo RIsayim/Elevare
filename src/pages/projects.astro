@@ -2,44 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-
-const projects = [
-  {
-    number: '01',
-    name: 'Stillwater House',
-    systems: 'Private cinema · Lighting · Control',
-    image: '/images/solace-slider-theater.jpg',
-    alt: 'A warm, luxurious private home theater with an expansive cinema screen',
-  },
-  {
-    number: '02',
-    name: 'Canyon House',
-    systems: 'Motorized shades · Climate · Audio',
-    image: '/images/solace-slider-motorized-shades.jpg',
-    alt: 'A serene modern living room with motorized roller shades across floor-to-ceiling windows',
-  },
-  {
-    number: '03',
-    name: 'Hillside House',
-    systems: 'Network · Security · Home control',
-    image: '/images/solace-slider-network-wifi.jpg',
-    alt: 'A discreet residential network rack integrated into a warm oak cabinet',
-  },
-  {
-    number: '04',
-    name: 'Garden House',
-    systems: 'Whole-home audio · Lighting',
-    image: '/images/solace-slider-home-audio.jpg',
-    alt: 'A refined living room with discreetly integrated architectural speakers and premium home audio',
-  },
-  {
-    number: '05',
-    name: 'Laurel House',
-    systems: 'Home automation · Shading · Lighting',
-    image: '/images/solace-slider-home-automation.jpg',
-    alt: 'A modern residence at dusk with layered automated lighting and a discreet wall keypad',
-  },
-];
+import projects from '../data/projects';
 ---
 
 <Layout title="Projects — Solace Integrated Living" description="Explore homes where thoughtful technology, considered design, and everyday life come together.">
@@ -51,27 +14,70 @@ const projects = [
       </div>
     </section>
 
-    <section class="projects-archive" aria-labelledby="projects-archive-title">
-      <div class="projects-archive-heading">
-        <h2 id="projects-archive-title">Considered from the inside out.</h2>
-        <p>Every home begins with its own rhythm. We bring the details of light, sound, comfort, and control together around the people who live there.</p>
-      </div>
-
-      <div class="projects-archive-grid">
-        {projects.map((project, index) => (
-          <article class:list={['project-archive-card', `project-archive-card-${index + 1}`]}>
-            <figure class="project-archive-image">
-              <img src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
-            </figure>
-            <div class="project-archive-caption">
-              <span class="project-archive-number">{project.number} <span aria-hidden="true">/</span> 05</span>
-              <h3>{project.name}</h3>
-              <p>{project.systems}</p>
-            </div>
-          </article>
+    <section class="projects-archive" aria-label="Explore our projects" data-project-archive data-projects={JSON.stringify(projects.map(({ number, name, systems }) => ({ number, name, systems })))}>
+      <div class="projects-archive-gallery" role="group" aria-label="Project images">
+        {[0, 1].map((column) => (
+          <div class:list={['projects-archive-column', `projects-archive-column-${column + 1}`]}>
+            {projects.filter((_, index) => index % 2 === column).map((project, index) => {
+              const projectIndex = index * 2 + column;
+              return (
+                <article class:list={['project-archive-card', `project-archive-card-${projectIndex + 1}`]} data-project-card={projectIndex}>
+                  <a class="project-archive-tile" href={`/projects/${project.slug}/`} aria-label={`View ${project.name}`} data-project-select={projectIndex}>
+                    <img src={project.image} alt={project.alt} loading={projectIndex < 2 ? 'eager' : 'lazy'} />
+                    <span class="project-archive-view" aria-hidden="true">View</span>
+                  </a>
+                </article>
+              );
+            })}
+          </div>
         ))}
       </div>
+
+      <aside class="projects-archive-details">
+        <div class="projects-archive-selected" data-project-details aria-live="polite" hidden>
+          <p class="projects-archive-number" data-project-number></p>
+          <h2 data-project-name></h2>
+          <p class="projects-archive-systems" data-project-systems></p>
+        </div>
+        <p class="projects-archive-description">Every home begins with its own rhythm. We listen closely to the people who live there, then bring lighting, sound, climate, cinema, security, and control together around the architecture. From the first conversation through the final details, each system is thoughtfully selected, carefully integrated, and tuned to everyday routines. The result is a residence that feels intuitive, comfortable, and unmistakably yours.</p>
+      </aside>
     </section>
   </main>
   <SiteFooter showIntro={false} />
 </Layout>
+
+<script>
+  const archive = document.querySelector<HTMLElement>('[data-project-archive]');
+  if (archive) {
+    const cards = Array.from(archive.querySelectorAll<HTMLElement>('[data-project-card]'));
+    const detail = archive.querySelector<HTMLElement>('[data-project-details]');
+    const number = archive.querySelector<HTMLElement>('[data-project-number]');
+    const name = archive.querySelector<HTMLElement>('[data-project-name]');
+    const systems = archive.querySelector<HTMLElement>('[data-project-systems]');
+    const projects = JSON.parse(archive.dataset.projects ?? '[]') as Array<{ number: string; name: string; systems: string }>;
+    const activateProject = (index: number | null) => {
+      archive.dataset.activeProject = index === null ? '' : String(index);
+      archive.classList.toggle('has-active-project', index !== null);
+      cards.forEach((card) => {
+        const cardIndex = Number(card.dataset.projectCard);
+        card.classList.toggle('is-active', cardIndex === index);
+        card.classList.toggle('is-muted', index !== null && cardIndex !== index);
+      });
+      if (!detail || !number || !name || !systems) return;
+      detail.hidden = index === null;
+      if (index === null) return;
+      number.textContent = `${projects[index].number} / ${projects.length.toString().padStart(2, '0')}`;
+      name.textContent = projects[index].name;
+      systems.textContent = projects[index].systems;
+    };
+
+    cards.forEach((card) => {
+      const index = Number(card.dataset.projectCard);
+      const tile = card.querySelector<HTMLAnchorElement>('[data-project-select]');
+      card.addEventListener('pointerenter', () => activateProject(index));
+      card.addEventListener('pointerleave', () => activateProject(null));
+      tile?.addEventListener('focus', () => activateProject(index));
+      tile?.addEventListener('blur', () => activateProject(null));
+    });
+  }
+</script>

@@ -8,6 +8,60 @@
       "sourceReference": "01a13481-9d56-7d20-8acc-4e2d17817927/exec-fa8cb4ba-8b2b-4f7a-8d9b-f0b881ac744a.png",
       "provenanceNote": "Generic, non-identifiable template portrait generated for this section; it does not depict a verified Solace executive.",
       "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Stillwater House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-stillwater-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ddeb930a-87bf-4607-a879-5b18204a5943.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Canyon House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-canyon-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-d8f32aff-b963-4cf1-9c1e-5ca1f7463820.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Hillside House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-hillside-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-db6404e1-cf08-4697-b91a-7f326f417d90.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Garden House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-garden-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ef100e0b-3e46-4d4f-8776-4f48a10e2f12.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Laurel House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-laurel-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-21963566-d65a-48c4-8d7b-7b2d83af3f15.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/projects/[slug].astro",
+      "slot": "Coastal House immersive project detail image section",
+      "assetPaths": ["public/images/project-detail-coastal-house.webp"],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-be76f35a-ef32-4cb4-849f-3209d58b899c.png",
+      "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
     }
   ],
   "images": [
@@ -16,6 +70,54 @@
       "status": null,
       "sourceType": "generated",
       "sourceReference": "01a13481-9d56-7d20-8acc-4e2d17817927/exec-fa8cb4ba-8b2b-4f7a-8d9b-f0b881ac744a.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-stillwater-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ddeb930a-87bf-4607-a879-5b18204a5943.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-canyon-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-d8f32aff-b963-4cf1-9c1e-5ca1f7463820.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-hillside-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-db6404e1-cf08-4697-b91a-7f326f417d90.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-garden-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ef100e0b-3e46-4d4f-8776-4f48a10e2f12.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-laurel-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-21963566-d65a-48c4-8d7b-7b2d83af3f15.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/project-detail-coastal-house.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-be76f35a-ef32-4cb4-849f-3209d58b899c.png",
       "exists": true,
       "reviewState": "awaiting_visual_review"
     }

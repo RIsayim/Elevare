@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+	return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.name} — Solace Integrated Living`} description={service.intro}>
+	<SiteHeader />
+	<main class="service-detail-page">
+		<section class="service-detail-hero" aria-labelledby="service-detail-title">
+			<div class="service-detail-heading">
+				<p class="service-detail-kicker">Core service / Solace Integrated Living</p>
+				<h1 id="service-detail-title">{service.name}</h1>
+				<p class="service-detail-intro">{service.intro}</p>
+				<a class="service-detail-link" href="/consultation/">Discuss your home <span aria-hidden="true">↗</span></a>
+			</div>
+			<figure class="service-detail-image">
+				<img src={service.image} alt={service.imageAlt} fetchpriority="high" />
+			</figure>
+		</section>
+
+		<section class="service-detail-benefits" aria-labelledby="service-detail-benefits-title">
+			<div class="service-detail-benefits-heading">
+				<p class="service-detail-kicker">Designed around your home</p>
+				<h2 id="service-detail-benefits-title">{service.statement}</h2>
+			</div>
+			<div class="service-detail-benefit-list">
+				{service.benefits.map((benefit, index) => (
+					<article class="service-detail-benefit">
+						<p class="service-detail-benefit-number">0{index + 1}</p>
+						<div>
+							<h3>{benefit.title}</h3>
+							<p>{benefit.text}</p>
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+
+		<section class="service-detail-cta" aria-label="Start a conversation about your home">
+			<p>Every home has its own character. Let’s shape a solution around yours.</p>
+			<a class="service-detail-link" href="/consultation/">Start a conversation <span aria-hidden="true">↗</span></a>
+		</section>
+	</main>
+	<SiteFooter showIntro={false} />
+</Layout>

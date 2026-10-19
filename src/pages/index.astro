@@ -2,49 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import portfolioProjects from '../data/projects';
 
-const projects = [
-  {
-    number: '1',
-    name: 'Stillwater House',
-    video: '/videos/solace-project-01.mp4',
-    image: '/images/solace-slider-theater.jpg',
-    alt: 'A warm, luxurious private home theater with an expansive cinema screen',
-    nextName: 'Canyon House',
-  },
-  {
-    number: '2',
-    name: 'Canyon House',
-    video: '/videos/solace-project-02.mp4',
-    image: '/images/solace-slider-motorized-shades.jpg',
-    alt: 'A serene modern living room with motorized roller shades across floor-to-ceiling windows',
-    nextName: 'Hillside House',
-  },
-  {
-    number: '3',
-    name: 'Hillside House',
-    video: '/videos/solace-project-03.mp4',
-    image: '/images/solace-slider-network-wifi.jpg',
-    alt: 'A discreet residential network rack integrated into a warm oak cabinet',
-    nextName: 'Garden House',
-  },
-  {
-    number: '4',
-    name: 'Garden House',
-    video: '/videos/solace-project-04.mp4',
-    image: '/images/solace-slider-home-audio.jpg',
-    alt: 'A refined living room with discreetly integrated architectural speakers and premium home audio',
-    nextName: 'Laurel House',
-  },
-  {
-    number: '5',
-    name: 'Laurel House',
-    video: '/videos/solace-project-05.mp4',
-    image: '/images/solace-slider-home-automation.jpg',
-    alt: 'A modern residence at dusk with layered automated lighting and a discreet wall keypad',
-    nextName: 'Stillwater House',
-  },
-];
+const projects = portfolioProjects.map((project, index) => ({
+  ...project,
+  number: String(index + 1),
+  nextName: portfolioProjects[(index + 1) % portfolioProjects.length].name,
+}));
 const initialProjectIndex = 0;
 ---
 
@@ -81,7 +45,7 @@ const initialProjectIndex = 0;
       </div>
     </section>
 
-    <section class="slider-fullsize" id="projects" aria-labelledby="project-title" data-project-slider data-projects={JSON.stringify(projects)} data-initial-index={initialProjectIndex}>
+    <section class="slider-fullsize" id="projects" aria-labelledby="project-title" data-project-slider data-projects={JSON.stringify(projects.map(({ number, name, video, image, alt, nextName }) => ({ number, name, video, image, alt, nextName })))} data-initial-index={initialProjectIndex}>
       <div class="slider-scene">
         <img class="slider-background is-active" src={projects[initialProjectIndex].image} alt={projects[initialProjectIndex].alt} data-project-image />
         <img class="slider-background is-next" src={projects[initialProjectIndex].image} alt="" aria-hidden="true" data-project-image-next />

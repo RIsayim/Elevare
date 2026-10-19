@@ -8,7 +8,18 @@
     <span class="wordmark-caption">INTEGRATED LIVING</span>
   </a>
   <nav class="nav-side nav-right" aria-label="More navigation">
-    <a href="/#solutions">Core services</a>
+    <div class="nav-dropdown" data-nav-dropdown>
+      <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="core-services-menu" data-nav-dropdown-trigger>Core services <span aria-hidden="true">⌄</span></button>
+      <ul class="nav-submenu" id="core-services-menu" hidden>
+        <li class="nav-submenu-overview"><a href="/services/">All services <span aria-hidden="true">↗</span></a></li>
+        <li><a href="/services/security-cameras/">Security &amp; Cameras</a></li>
+        <li><a href="/services/home-network-wifi/">Home Network &amp; WiFi</a></li>
+        <li><a href="/services/whole-home-audio/">Whole-Home Audio</a></li>
+        <li><a href="/services/intelligent-lighting/">Intelligent Lighting</a></li>
+        <li><a href="/services/automated-shades/">Automated Shades</a></li>
+        <li><a href="/services/home-theater/">Home Theater</a></li>
+      </ul>
+    </div>
     <a class="nav-consultation" href="/consultation/">Consultation</a>
   </nav>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
@@ -19,7 +30,18 @@
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
   <a href="/about/">About us <span>01</span></a>
   <a href="/projects/">Projects <span>02</span></a>
-  <a href="/#solutions">Core services <span>03</span></a>
+  <div class="mobile-nav-services">
+    <button class="mobile-nav-services-trigger" type="button" aria-expanded="false" aria-controls="mobile-core-services-menu" data-mobile-services-trigger>Core services <span>03</span></button>
+    <ul class="mobile-nav-services-list" id="mobile-core-services-menu" hidden>
+      <li class="mobile-nav-services-overview"><a href="/services/">All services <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/services/security-cameras/">Security &amp; Cameras</a></li>
+      <li><a href="/services/home-network-wifi/">Home Network &amp; WiFi</a></li>
+      <li><a href="/services/whole-home-audio/">Whole-Home Audio</a></li>
+      <li><a href="/services/intelligent-lighting/">Intelligent Lighting</a></li>
+      <li><a href="/services/automated-shades/">Automated Shades</a></li>
+      <li><a href="/services/home-theater/">Home Theater</a></li>
+    </ul>
+  </div>
   <a href="/consultation/">Consultation <span>04</span></a>
 </nav>
 
@@ -41,6 +63,44 @@
     menuToggle?.setAttribute('aria-label', 'Open navigation');
     document.body.classList.remove('menu-open');
   }));
+
+  const desktopDropdown = document.querySelector<HTMLElement>('[data-nav-dropdown]');
+  const desktopDropdownTrigger = desktopDropdown?.querySelector<HTMLButtonElement>('[data-nav-dropdown-trigger]');
+  const desktopSubmenu = desktopDropdown?.querySelector<HTMLElement>('.nav-submenu');
+  const setDesktopDropdownOpen = (open: boolean) => {
+    desktopDropdownTrigger?.setAttribute('aria-expanded', String(open));
+    if (desktopSubmenu) desktopSubmenu.hidden = !open;
+  };
+
+  desktopDropdown?.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse') setDesktopDropdownOpen(true);
+  });
+  desktopDropdown?.addEventListener('pointerleave', (event) => {
+    if (event.pointerType === 'mouse' && !desktopDropdown?.contains(document.activeElement)) setDesktopDropdownOpen(false);
+  });
+  desktopDropdown?.addEventListener('focusin', () => setDesktopDropdownOpen(true));
+  desktopDropdown?.addEventListener('focusout', (event) => {
+    if (!desktopDropdown?.contains(event.relatedTarget as Node | null)) setDesktopDropdownOpen(false);
+  });
+  desktopDropdownTrigger?.addEventListener('click', () => {
+    if (window.matchMedia('(hover: none)').matches) {
+      setDesktopDropdownOpen(desktopDropdownTrigger.getAttribute('aria-expanded') !== 'true');
+    }
+  });
+  desktopDropdown?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setDesktopDropdownOpen(false);
+      desktopDropdownTrigger?.focus();
+    }
+  });
+
+  const mobileServicesTrigger = document.querySelector<HTMLButtonElement>('[data-mobile-services-trigger]');
+  const mobileServicesList = document.querySelector<HTMLElement>('#mobile-core-services-menu');
+  mobileServicesTrigger?.addEventListener('click', () => {
+    const isExpanded = mobileServicesTrigger.getAttribute('aria-expanded') === 'true';
+    mobileServicesTrigger.setAttribute('aria-expanded', String(!isExpanded));
+    if (mobileServicesList) mobileServicesList.hidden = isExpanded;
+  });
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
