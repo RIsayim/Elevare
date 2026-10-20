@@ -230,6 +230,66 @@
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-0a08b78e-e3d2-4937-a709-d778c53ba6d8.png",
       "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
       "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Home Network & WiFi service detail supporting image pair",
+      "assetPaths": [
+        "public/images/service-details/home-network-wifi-connected-living.webp",
+        "public/images/service-details/home-network-wifi-access-point.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-4e0a5720-ed48-44fa-82b6-586e6574c856.png; 01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-26e6227f-7617-47d0-9343-c467bf528cfe.png",
+      "provenanceNote": "Generic illustrative service photography generated for the reusable site template; these images do not document a verified Solace client project.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Whole-Home Audio service detail supporting image pair",
+      "assetPaths": [
+        "public/images/service-details/whole-home-audio-living-room.webp",
+        "public/images/service-details/whole-home-audio-terrace-speaker.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-7ed36e80-6744-44be-b0bd-f49bda90e9d9.png; 01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-03d284e3-5985-4ce1-a5e0-42341140bbe4.png",
+      "provenanceNote": "Generic illustrative service photography generated for the reusable site template; these images do not document a verified Solace client project.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Intelligent Lighting service detail supporting image pair",
+      "assetPaths": [
+        "public/images/service-details/intelligent-lighting-dining.webp",
+        "public/images/service-details/intelligent-lighting-wall-wash.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-5a64a5aa-1568-437e-a9e2-96dfb85dcef2.png; 01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-f377e08d-4093-46c1-aaaa-d5e203976444.png",
+      "provenanceNote": "Generic illustrative service photography generated for the reusable site template; these images do not document a verified Solace client project.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Automated Shades service detail supporting image pair",
+      "assetPaths": [
+        "public/images/service-details/automated-shades-bedroom.webp",
+        "public/images/service-details/automated-shades-living-room.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-a8b777a4-3f79-45db-a886-4a16bdef93bb.png; 01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-47f6200b-293f-48b7-8a0c-ccbcdf119634.png",
+      "provenanceNote": "Generic illustrative service photography generated for the reusable site template; these images do not document a verified Solace client project.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Home Theater service detail supporting image pair",
+      "assetPaths": [
+        "public/images/service-details/home-theater-screening-room.webp",
+        "public/images/service-details/home-theater-acoustic-detail.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-cc6e0c00-530d-4955-a1cc-e03827d0bc19.png; 01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-94be4252-556f-4d37-916b-1dd6322f3f89.png",
+      "provenanceNote": "Generic illustrative service photography generated for the reusable site template; these images do not document a verified Solace client project.",
+      "reviewState": "awaiting_visual_review"
     }
   ],
   "images": [
@@ -398,6 +458,86 @@
       "status": "generated",
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-0a08b78e-e3d2-4937-a709-d778c53ba6d8.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/home-network-wifi-connected-living.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-4e0a5720-ed48-44fa-82b6-586e6574c856.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/home-network-wifi-access-point.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-26e6227f-7617-47d0-9343-c467bf528cfe.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/whole-home-audio-living-room.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-7ed36e80-6744-44be-b0bd-f49bda90e9d9.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/whole-home-audio-terrace-speaker.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-03d284e3-5985-4ce1-a5e0-42341140bbe4.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/intelligent-lighting-dining.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-5a64a5aa-1568-437e-a9e2-96dfb85dcef2.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/intelligent-lighting-wall-wash.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-f377e08d-4093-46c1-aaaa-d5e203976444.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/automated-shades-bedroom.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-a8b777a4-3f79-45db-a886-4a16bdef93bb.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/automated-shades-living-room.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-47f6200b-293f-48b7-8a0c-ccbcdf119634.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/home-theater-screening-room.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-cc6e0c00-530d-4955-a1cc-e03827d0bc19.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/home-theater-acoustic-detail.webp",
+      "status": null,
+      "sourceType": "generated",
+      "sourceReference": "01a15433-03a5-7a23-97c6-f20a3d33eeb9/exec-94be4252-556f-4d37-916b-1dd6322f3f89.png",
       "exists": true,
       "reviewState": "awaiting_visual_review"
     }
