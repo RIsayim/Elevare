@@ -3,7 +3,9 @@
     {
       "page": "src/pages/about.astro",
       "slot": "About page leadership portrait with left-side copy and parallax background",
-      "assetPaths": ["public/images/about-leadership-founder.png"],
+      "assetPaths": [
+        "public/images/about-leadership-founder.png"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a13481-9d56-7d20-8acc-4e2d17817927/exec-fa8cb4ba-8b2b-4f7a-8d9b-f0b881ac744a.png",
       "provenanceNote": "Generic, non-identifiable template portrait generated for this section; it does not depict a verified Solace executive.",
@@ -12,7 +14,9 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Stillwater House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-stillwater-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-stillwater-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ddeb930a-87bf-4607-a879-5b18204a5943.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
@@ -21,7 +25,9 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Canyon House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-canyon-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-canyon-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-d8f32aff-b963-4cf1-9c1e-5ca1f7463820.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
@@ -30,7 +36,9 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Hillside House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-hillside-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-hillside-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-db6404e1-cf08-4697-b91a-7f326f417d90.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
@@ -39,7 +47,9 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Garden House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-garden-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-garden-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ef100e0b-3e46-4d4f-8776-4f48a10e2f12.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
@@ -48,7 +58,9 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Laurel House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-laurel-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-laurel-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-21963566-d65a-48c4-8d7b-7b2d83af3f15.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
@@ -57,10 +69,166 @@
     {
       "page": "src/pages/projects/[slug].astro",
       "slot": "Coastal House immersive project detail image section",
-      "assetPaths": ["public/images/project-detail-coastal-house.webp"],
+      "assetPaths": [
+        "public/images/project-detail-coastal-house.webp"
+      ],
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-be76f35a-ef32-4cb4-849f-3209d58b899c.png",
       "provenanceNote": "Generated as generic illustrative portfolio imagery; the project is fictional and the image is not documentary client photography.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "security-cameras service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/security-cameras.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-5446bc0f-0127-4e51-87b7-b38ecbf6c7d6.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "home-network-wifi service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/home-network-wifi.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ce243e68-57ac-4f2f-b652-e82593b7244a.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "whole-home-audio service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/whole-home-audio.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-79987cc4-eb8f-407d-92b5-58926198c55f.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "intelligent-lighting service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/intelligent-lighting.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-9b7f8995-c64a-425d-b6aa-1c5de1cbbd44.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "automated-shades service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/automated-shades.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-37e4f8d7-8f01-478b-be67-f142f37a2cc2.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "home-theater service detail hero image",
+      "assetPaths": [
+        "public/images/service-heroes/home-theater.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-1f94ba20-17a3-483a-bae9-c51c9b9c23db.png",
+      "provenanceNote": "Generated as generic illustrative service imagery, not documentary client photography. Converted from the generated PNG to WebP at quality 84; the generated original remains in the Codex generated-images directory.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about discreet residential security",
+      "assetPaths": [
+        "public/images/service-stories/security-cameras.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-c3fec331-acac-4d07-8cc9-1e76da9744cd.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about connected home networking",
+      "assetPaths": [
+        "public/images/service-stories/home-network-wifi.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-6066d01b-ac22-425a-b05c-7d8434369adc.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about whole-home listening",
+      "assetPaths": [
+        "public/images/service-stories/whole-home-audio.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-35bab5dc-112d-482b-b411-0aeab46e3373.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about layered architectural lighting",
+      "assetPaths": [
+        "public/images/service-stories/intelligent-lighting.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-f8c9928c-c348-4d81-b77d-5de4c805140f.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about daylight and automated shades",
+      "assetPaths": [
+        "public/images/service-stories/automated-shades.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-44ea4a14-c224-40c1-b464-1fd7674a840f.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "A service detail editorial image about a private home theater",
+      "assetPaths": [
+        "public/images/service-stories/home-theater.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-8ffbc223-626a-49e1-8ee4-cf2af6774868.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Security & Cameras residence entry image in staggered service image pair",
+      "assetPaths": [
+        "public/images/service-details/security-entry-pair.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ac9389cc-ce92-44b3-a036-77f9b169d927.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "page": "src/pages/services/[slug].astro",
+      "slot": "Security & Cameras camera detail image in staggered service image pair",
+      "assetPaths": [
+        "public/images/service-details/security-camera-detail.webp"
+      ],
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-0a08b78e-e3d2-4937-a709-d778c53ba6d8.png",
+      "provenanceNote": "Generated generic illustrative service imagery, not documentary client photography; converted from the generated PNG to WebP at quality 84.",
       "reviewState": "awaiting_visual_review"
     }
   ],
@@ -118,6 +286,118 @@
       "status": "generated",
       "sourceType": "generated",
       "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-be76f35a-ef32-4cb4-849f-3209d58b899c.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/security-cameras.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-5446bc0f-0127-4e51-87b7-b38ecbf6c7d6.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/home-network-wifi.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ce243e68-57ac-4f2f-b652-e82593b7244a.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/whole-home-audio.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-79987cc4-eb8f-407d-92b5-58926198c55f.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/intelligent-lighting.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-9b7f8995-c64a-425d-b6aa-1c5de1cbbd44.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/automated-shades.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-37e4f8d7-8f01-478b-be67-f142f37a2cc2.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-heroes/home-theater.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-1f94ba20-17a3-483a-bae9-c51c9b9c23db.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/security-cameras.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-c3fec331-acac-4d07-8cc9-1e76da9744cd.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/home-network-wifi.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-6066d01b-ac22-425a-b05c-7d8434369adc.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/whole-home-audio.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-35bab5dc-112d-482b-b411-0aeab46e3373.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/intelligent-lighting.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-f8c9928c-c348-4d81-b77d-5de4c805140f.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/automated-shades.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-44ea4a14-c224-40c1-b464-1fd7674a840f.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-stories/home-theater.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-8ffbc223-626a-49e1-8ee4-cf2af6774868.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/security-entry-pair.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-ac9389cc-ce92-44b3-a036-77f9b169d927.png",
+      "exists": true,
+      "reviewState": "awaiting_visual_review"
+    },
+    {
+      "assetPath": "public/images/service-details/security-camera-detail.webp",
+      "status": "generated",
+      "sourceType": "generated",
+      "sourceReference": "01a14a59-4928-77c3-8413-c49598c160bf/exec-0a08b78e-e3d2-4937-a709-d778c53ba6d8.png",
       "exists": true,
       "reviewState": "awaiting_visual_review"
     }

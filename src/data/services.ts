@@ -5,11 +5,25 @@ export interface ServiceBenefit {
 	text: string;
 }
 
+export interface ServiceDetailImage {
+	src: string;
+	alt: string;
+}
+
 export interface CoreService {
 	slug: string;
 	name: string;
 	image: string;
+	heroImage: string;
+	heroImageAlt: string;
+	heroTitleLines: [string, string];
 	imageAlt: string;
+	featureImage: string;
+	featureImageAlt: string;
+	serviceVideo: string;
+	imagePair?: ServiceDetailImage[];
+	featureTitle: string;
+	featureText: string;
 	intro: string;
 	statement: string;
 	benefits: ServiceBenefit[];
@@ -20,7 +34,19 @@ export const services: CoreService[] = [
 		slug: 'security-cameras',
 		name: 'Security & Cameras',
 		image: withBase('/images/about-gallery-control.webp'),
+		heroImage: withBase('/images/service-heroes/security-cameras.webp'),
+		heroImageAlt: 'A warm modern residence entry at blue hour with discreet integrated security cameras',
+		heroTitleLines: ['Security', '& Cameras'],
 		imageAlt: 'A discreetly integrated home control keypad in a warm modern interior',
+		featureImage: withBase('/images/service-stories/security-cameras.webp'),
+		featureImageAlt: 'A sunlit stone entry with a discreet security camera integrated near the doorway',
+		serviceVideo: withBase('/videos/solace-project-01.mp4'),
+		imagePair: [
+			{ src: withBase('/images/service-details/security-entry-pair.webp'), alt: 'A warm stone and oak residence entry with a discreetly integrated security camera' },
+			{ src: withBase('/images/service-details/security-camera-detail.webp'), alt: 'A discreet residential security camera mounted beneath an oak entry soffit' },
+		],
+		featureTitle: 'A quieter sense of security.',
+		featureText: 'From the front door to the garden, discreet cameras and thoughtful coverage help you stay aware of what is happening around home. Carefully placed devices and useful notifications support peace of mind while keeping the architecture—and your day—uninterrupted.',
 		intro: 'Feel more at ease at home with a security system designed around your property, your routines, and the way you want to stay connected.',
 		statement: 'A considered approach to peace of mind.',
 		benefits: [
@@ -33,7 +59,15 @@ export const services: CoreService[] = [
 		slug: 'home-network-wifi',
 		name: 'Home Network & WiFi',
 		image: withBase('/images/solace-slider-network-wifi.jpg'),
+		heroImage: withBase('/images/service-heroes/home-network-wifi.webp'),
+		heroImageAlt: 'A connected contemporary living space opening onto a Southern California hillside',
+		heroTitleLines: ['Home Network', '& WiFi'],
 		imageAlt: 'A contemporary residence with a connected home network',
+		featureImage: withBase('/images/service-stories/home-network-wifi.webp'),
+		featureImageAlt: 'A warm contemporary home with open rooms and garden views supported by a reliable network',
+		serviceVideo: withBase('/videos/solace-project-02.mp4'),
+		featureTitle: 'The connection behind every room.',
+		featureText: 'Work, entertainment and everyday devices all rely on a connection that feels effortless. We plan the network around the home’s layout and materials, placing infrastructure with care so coverage reaches the spaces where you live, work and unwind.',
 		intro: 'A dependable home network is the quiet foundation behind work, entertainment, communication, and every connected system in the house.',
 		statement: 'Reliable connection, built into the home.',
 		benefits: [
@@ -46,7 +80,15 @@ export const services: CoreService[] = [
 		slug: 'whole-home-audio',
 		name: 'Whole-Home Audio',
 		image: withBase('/images/about-gallery-audio.webp'),
+		heroImage: withBase('/images/service-heroes/whole-home-audio.webp'),
+		heroImageAlt: 'A warm modern living room and terrace designed for whole home listening',
+		heroTitleLines: ['Whole-Home', 'Audio'],
 		imageAlt: 'A serene listening room with integrated architectural audio',
+		featureImage: withBase('/images/service-stories/whole-home-audio.webp'),
+		featureImageAlt: 'A calm open-plan living room designed for music throughout the home',
+		serviceVideo: withBase('/videos/solace-project-03.mp4'),
+		featureTitle: 'Sound that belongs in the room.',
+		featureText: 'A favorite album can set the pace of a morning or bring everyone together at the end of the day. Carefully considered speakers and listening zones let music feel natural in each space, while simple controls make it easy to listen your way.',
 		intro: 'Bring music into the rooms where life happens, with sound that feels natural in the space and simple to enjoy throughout the home.',
 		statement: 'Sound that moves naturally with your day.',
 		benefits: [
@@ -59,7 +101,15 @@ export const services: CoreService[] = [
 		slug: 'intelligent-lighting',
 		name: 'Intelligent Lighting',
 		image: withBase('/images/garden-lighting.webp'),
+		heroImage: withBase('/images/service-heroes/intelligent-lighting.webp'),
+		heroImageAlt: 'Layered architectural lighting across a warm modern dining room at dusk',
+		heroTitleLines: ['Intelligent', 'Lighting'],
 		imageAlt: 'Warm architectural lighting bringing a garden terrace to life',
+		featureImage: withBase('/images/service-stories/intelligent-lighting.webp'),
+		featureImageAlt: 'A softly illuminated dining and living space at dusk with layered architectural lighting',
+		serviceVideo: withBase('/videos/solace-project-04.mp4'),
+		featureTitle: 'Light that changes how home feels.',
+		featureText: 'The right light brings warmth to a gathering, clarity to a task and calm to the close of day. Layered architectural lighting gives each room its own character, with intuitive scenes that shift the atmosphere as naturally as your plans do.',
 		intro: 'Thoughtful lighting brings out the character of a room, supports daily routines, and lets the mood of your home shift with the moment.',
 		statement: 'Light shaped around the way you live.',
 		benefits: [
@@ -72,7 +122,15 @@ export const services: CoreService[] = [
 		slug: 'automated-shades',
 		name: 'Automated Shades',
 		image: withBase('/images/about-gallery-shades.webp'),
+		heroImage: withBase('/images/service-heroes/automated-shades.webp'),
+		heroImageAlt: 'Soft daylight filtered through automated linen shades in a calm modern bedroom',
+		heroTitleLines: ['Automated', 'Shades'],
 		imageAlt: 'Soft daylight filtered through motorized shades in a calm bedroom',
+		featureImage: withBase('/images/service-stories/automated-shades.webp'),
+		featureImageAlt: 'Soft woven shades filtering late afternoon daylight in a warm modern living room',
+		serviceVideo: withBase('/videos/solace-project-05.mp4'),
+		featureTitle: 'A softer relationship with daylight.',
+		featureText: 'Morning sun, changing views and the need for privacy all shape how a room feels. Precisely fitted shades let you temper brightness and create a sense of retreat, while fabrics and discreet hardware sit comfortably within the design.',
 		intro: 'Motorized shades give you an effortless way to welcome daylight, soften glare, and create privacy while preserving the design of your windows.',
 		statement: 'Daylight and privacy, in balance.',
 		benefits: [
@@ -85,7 +143,15 @@ export const services: CoreService[] = [
 		slug: 'home-theater',
 		name: 'Home Theater',
 		image: withBase('/images/private-cinema.webp'),
+		heroImage: withBase('/images/service-heroes/home-theater.webp'),
+		heroImageAlt: 'A private home theater with integrated acoustic panels and warm step lighting',
+		heroTitleLines: ['Home', 'Theater'],
 		imageAlt: 'A private home cinema with immersive seating and integrated lighting',
+		featureImage: withBase('/images/service-stories/home-theater.webp'),
+		featureImageAlt: 'An intimate private cinema with deep upholstered seating and softly integrated lighting',
+		serviceVideo: withBase('/videos/solace-hero.mp4'),
+		featureTitle: 'A room made for complete escape.',
+		featureText: 'A dedicated cinema invites you to leave the everyday behind for a while. Immersive sound, a generous picture and considered lighting work together with the room’s materials and seating, creating a comfortable setting for films, sport and shared evenings.',
 		intro: 'Create a place to settle in and enjoy films, sports, and music with immersive picture and sound, carefully integrated into your home.',
 		statement: 'A cinema experience made personal.',
 		benefits: [
