@@ -16,7 +16,7 @@ const initialProjectIndex = 0;
 <Layout title="Solace — Technology, quietly integrated" description="Solace designs and integrates thoughtful home technology for remarkable residences. Lighting, sound, cinema, control, and the details that make them feel effortless.">
   <SiteHeader />
 
-  <main>
+  <main class="home-page">
     <section class="hero" aria-labelledby="hero-title" data-scroll-hero>
       <div class="hero-stage">
         <div class="hero-copy">
@@ -402,13 +402,14 @@ const initialProjectIndex = 0;
         }
         const mobileHero = window.matchMedia('(max-width: 800px)').matches;
         const initialMediaHeight = mobileHero ? 34 : 36;
+        const maximumMediaHeight = mobileHero ? 82 : 90;
         const mediaOffset = mobileHero ? 125 : 200;
         scrollHero.style.setProperty('--hero-progress', progress.toFixed(4));
         scrollHero.style.setProperty('--hero-title-y', `${-progress * 190}px`);
         scrollHero.style.setProperty('--hero-title-opacity', `${Math.max(0, 1 - progress * 1.65)}`);
         scrollHero.style.setProperty('--hero-word-spacing', `${0.12 + progress * 0.34}em`);
         scrollHero.style.setProperty('--hero-media-width', `${80 + displayedWidthProgress * 20}%`);
-        scrollHero.style.setProperty('--hero-media-height', `${initialMediaHeight + displayedMediaProgress * (90 - initialMediaHeight)}vh`);
+        scrollHero.style.setProperty('--hero-media-height', `${initialMediaHeight + displayedMediaProgress * (maximumMediaHeight - initialMediaHeight)}vh`);
         scrollHero.style.setProperty('--hero-media-bottom', `${-mediaOffset + displayedMediaProgress * mediaOffset}px`);
         scrollHero.style.setProperty('--hero-media-radius', `${4 * (1 - displayedMediaProgress)}px`);
       };

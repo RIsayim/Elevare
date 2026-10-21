@@ -12,11 +12,12 @@ export function getStaticPaths() {
 const { service } = Astro.props;
 const currentServiceIndex = services.findIndex((item) => item.slug === service.slug);
 const nextService = services[(currentServiceIndex + 1) % services.length];
+const mobileEditorialServices = ['security-cameras', 'home-network-wifi', 'whole-home-audio', 'intelligent-lighting', 'automated-shades', 'home-theater'];
 ---
 
 <Layout title={`${service.name} — Solace Integrated Living`} description={service.intro}>
 	<SiteHeader />
-	<main class="service-detail-page">
+	<main class:list={["service-detail-page", `service-detail-page--${service.slug}`, mobileEditorialServices.includes(service.slug) && "service-detail-page--mobile-editorial"]}>
 		<section class="service-detail-hero" aria-labelledby="service-detail-title" data-service-hero>
 			<figure class="service-detail-image" style={`--service-hero-background: url("${service.heroImage}")`}>
 				<img src={service.heroImage} alt={service.heroImageAlt} fetchpriority="high" />
@@ -46,9 +47,19 @@ const nextService = services[(currentServiceIndex + 1) % services.length];
 		</section>
 
 		<section class="service-detail-image-pair scroll-reveal" aria-label={`${service.name} in the home`} data-service-image-pair>
+			{service.imagePairIntro && (
+				<div class="service-detail-image-pair-intro">
+					<h2>{service.imagePairIntro}</h2>
+				</div>
+			)}
 			{service.imagePair.map((image, index) => (
 				<figure class:list={["service-detail-image-pair-item", `service-detail-image-pair-item--${index + 1}`]}>
 					<img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+					{service.imagePairCaptions?.[index] && (
+						<figcaption class="service-detail-image-pair-caption">
+							<strong>{service.imagePairCaptions[index]}</strong>
+						</figcaption>
+					)}
 				</figure>
 			))}
 		</section>

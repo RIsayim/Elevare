@@ -22,6 +22,8 @@ export interface CoreService {
 	featureImageAlt: string;
 	serviceVideo: string;
 	imagePair: ServiceDetailImage[];
+	imagePairIntro?: string;
+	imagePairCaptions?: [string, string];
 	featureTitle: string;
 	featureText: string;
 	storyTitle: string;
@@ -47,6 +49,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/security-entry-pair.webp'), alt: 'A warm stone and oak residence entry with a discreetly integrated security camera' },
 			{ src: withBase('/images/service-details/security-camera-detail.webp'), alt: 'A discreet residential security camera mounted beneath an oak entry soffit' },
 		],
+		imagePairIntro: 'Security, integrated with care.',
+		imagePairCaptions: ['A considered arrival', 'Discreet camera placement'],
 		featureTitle: 'A quieter sense of security.',
 		featureText: 'From the front door to the garden, discreet cameras and thoughtful coverage help you stay aware of what is happening around home. Carefully placed devices and useful notifications support peace of mind while keeping the architecture—and your day—uninterrupted.',
 		storyTitle: 'CONFIDENCE, WITHOUT COMPROMISING THE HOME.',
@@ -77,6 +81,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/home-network-wifi-connected-living.webp'), alt: 'A connected open-plan residence with a discreet ceiling-mounted wireless access point' },
 			{ src: withBase('/images/service-details/home-network-wifi-access-point.webp'), alt: 'A flush-mounted WiFi access point integrated into an oak-beamed ceiling' },
 		],
+		imagePairIntro: 'A stronger connection, in every room.',
+		imagePairCaptions: ['Connected living', 'WiFi, discreetly placed'],
 		featureTitle: 'The connection behind every room.',
 		featureText: 'Work, entertainment and everyday devices all rely on a connection that feels effortless. We plan the network around the home’s layout and materials, placing infrastructure with care so coverage reaches the spaces where you live, work and unwind.',
 		storyTitle: 'A STRONGER CONNECTION, BUILT INTO THE HOME.',
@@ -107,6 +113,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/whole-home-audio-living-room.webp'), alt: 'A warm modern living room with discreetly integrated ceiling speakers and garden views' },
 			{ src: withBase('/images/service-details/whole-home-audio-terrace-speaker.webp'), alt: 'A discreet outdoor speaker set among garden planting beside a residential terrace' },
 		],
+		imagePairIntro: 'Sound that feels at home.',
+		imagePairCaptions: ['Music in the living room', 'Sound on the terrace'],
 		featureTitle: 'Sound that belongs in the room.',
 		featureText: 'A favorite album can set the pace of a morning or bring everyone together at the end of the day. Carefully considered speakers and listening zones let music feel natural in each space, while simple controls make it easy to listen your way.',
 		storyTitle: 'SOUND THAT MOVES AS NATURALLY AS HOME LIFE.',
@@ -137,6 +145,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/intelligent-lighting-dining.webp'), alt: 'A dining room with layered architectural lighting at early evening' },
 			{ src: withBase('/images/service-details/intelligent-lighting-wall-wash.webp'), alt: 'A limestone hallway with a soft architectural wall wash and low-level path lighting' },
 		],
+		imagePairIntro: 'Light, layered to set the mood.',
+		imagePairCaptions: ['Light for gathering', 'A softer evening glow'],
 		featureTitle: 'Light that changes how home feels.',
 		featureText: 'The right light brings warmth to a gathering, clarity to a task and calm to the close of day. Layered architectural lighting gives each room its own character, with intuitive scenes that shift the atmosphere as naturally as your plans do.',
 		storyTitle: 'A MORE CONSIDERED RELATIONSHIP WITH LIGHT.',
@@ -167,6 +177,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/automated-shades-bedroom.webp'), alt: 'Fine woven motorized shades diffusing morning light in a calm modern bedroom' },
 			{ src: withBase('/images/service-details/automated-shades-living-room.webp'), alt: 'A woven shade filtering late-afternoon light in a warm modern living room' },
 		],
+		imagePairIntro: 'Daylight, adjusted to your rhythm.',
+		imagePairCaptions: ['Soft morning light', 'Privacy, precisely placed'],
 		featureTitle: 'A softer relationship with daylight.',
 		featureText: 'Morning sun, changing views and the need for privacy all shape how a room feels. Precisely fitted shades let you temper brightness and create a sense of retreat, while fabrics and discreet hardware sit comfortably within the design.',
 		storyTitle: 'DAYLIGHT, SHAPED AROUND YOUR ROUTINE.',
@@ -197,6 +209,8 @@ export const services: CoreService[] = [
 			{ src: withBase('/images/service-details/home-theater-screening-room.webp'), alt: 'A private cinema with a wide projection screen, comfortable seating, and subtle aisle lighting' },
 			{ src: withBase('/images/service-details/home-theater-acoustic-detail.webp'), alt: 'A close view of upholstered cinema seating beside acoustic wall panels and concealed lighting' },
 		],
+		imagePairIntro: 'Every detail, made for immersion.',
+		imagePairCaptions: ['A private cinema', 'Acoustics, integrated'],
 		featureTitle: 'A room made for complete escape.',
 		featureText: 'A dedicated cinema invites you to leave the everyday behind for a while. Immersive sound, a generous picture and considered lighting work together with the room’s materials and seating, creating a comfortable setting for films, sport and shared evenings.',
 		storyTitle: 'A ROOM SHAPED AROUND THE EXPERIENCE.',

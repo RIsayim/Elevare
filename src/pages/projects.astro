@@ -27,6 +27,7 @@ import { withBase } from '../utils/site-path';
                     <img src={project.image} alt={project.alt} loading={projectIndex < 2 ? 'eager' : 'lazy'} />
                     <span class="project-archive-view" aria-hidden="true">View</span>
                   </a>
+                  <p class="project-archive-caption"><span>{project.number}</span>{project.name}</p>
                 </article>
               );
             })}

@@ -126,7 +126,7 @@ const aboutGallery = [
     const parallaxGallery = document.querySelector<HTMLElement>('[data-parallax-gallery]');
     const firstGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="first"]') ?? []);
     const secondGalleryRow = Array.from(parallaxGallery?.querySelectorAll<HTMLElement>('[data-scroll-row="second"]') ?? []);
-    if (parallaxGallery && firstGalleryRow.length && secondGalleryRow.length && !reduceMotion && window.matchMedia('(min-width: 801px)').matches) {
+    if (parallaxGallery && firstGalleryRow.length && secondGalleryRow.length && !reduceMotion && window.matchMedia('(min-width: 1101px)').matches) {
       let parallaxFrame = 0;
       const updateParallaxGallery = () => {
         parallaxFrame = 0;
